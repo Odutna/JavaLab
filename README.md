@@ -17,6 +17,7 @@ Questo repository contiene una serie di attività pratiche progettate per aiutar
 ## Struttura del repository
 
 Il repository è organizzato in cartelle separate, ciascuna dedicata a un argomento o a un insieme di esercizi correlati, secondo la seguente struttura:
+
 ```html
 JavaLabs/
 ├── Lab1/
@@ -34,10 +35,6 @@ JavaLabs/
 └── README.md
 ```
 
-Ogni cartella di laboratorio contiene:
-
-- `Esercizi.md`: il file con gli esercizi da svolgere
-- `Soluzioni/`: una cartella con le soluzioni degli esercizi
 
 ## Come utilizzare i laboratori
 
