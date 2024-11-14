@@ -20,6 +20,22 @@ public class ContaCifre {
         return cont; // Restituisco il numero totale di cifre calcolato
     }
 
+    //metodo per calcolare il numero di cifre
+    public int contaCifre2(int numero) {
+
+        //counter cifre
+        int counter = 0;
+
+        if (numero == 0) return 1;
+
+        //ciclo for per calcolare il numero di cifre; != rende funzionale sia per numeri negativi che positivi
+        for (; numero != 0; numero/=10) {
+            counter++;
+        }
+
+        return counter;
+    }
+
     public static void main(String[] cmd) {
         Scanner sc = new Scanner(System.in); // Creo un oggetto Scanner per leggere l'input utente
 
@@ -31,7 +47,7 @@ public class ContaCifre {
             // Stampo il numero di cifre del numero usando il metodo contaCifre
             System.out.print("Il numero di cifre è: " + contaCifre(n1));
 
-            System.out.print("\nInserire un altro numero? (s/n) ");
+            System.out.print("\nContinuare? (s/n) ");
             char op = sc.next().charAt(0);
             if (op == 'n') {
                 run = false;
