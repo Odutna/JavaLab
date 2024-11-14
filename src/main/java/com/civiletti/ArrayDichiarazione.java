@@ -1,61 +1,75 @@
 package com.civiletti;
 
 /**
- * In Java gli array sono considerati oggetti e possono essere dichiarati in diversi modi,
- * con o senza l'uso dell'operatore new.
+ * Questa dimostrazione mostra come dichiarare, allocare memoria e inizializzare array in Java.
+ * Viene anche illustrato come iterare sugli elementi, oltre a eseguire operazioni di inserimento 
+ * e lettura dei singoli elementi tramite l'indice.
+ *
+ * In Java, gli array sono considerati oggetti e possono essere dichiarati e inizializzati in vari modi,
+ * con o senza l'uso dell'operatore 'new'.
  */
-
 public class ArrayDichiarazione {
 
     public static void main(String[] args) {
 
-        // Sintassi:
-        // Tipo[] nomeArray = new Tipo[dimensione];
-        
-        // Dichiarazione con Allocazione Esplicita di Memoria
-        int[] arrayInt = new int[5];  // Array di interi di lunghezza 5
-        double[] arrayDouble = new double[10];  // Array di double di lunghezza 10
+        // Dichiarazione e allocazione di memoria
+        int[] arrayInt = new int[5];  // Array di interi con lunghezza 5
+        double[] arrayDouble = new double[10];  // Array di double con lunghezza 10
 
-        // Dichiarazione e Allocazione separata
+        // Dichiarazione separata e successiva allocazione di memoria
         float[] arrayFloat;        // Dichiarazione dell'array
-        arrayFloat = new float[5]; // Array di float di lunghezza 5
+        arrayFloat = new float[5]; // Allocazione di un array di float con lunghezza 5
 
-        // Dichiarazione e Allocazione separata e inizializzazione
-        Character[] arrayCharacter;        // Dichiarazione dell'array
-        arrayCharacter = new Character[]{'P','r','o','g','r','a','m','m','a'}; // Inizializzazione dell'array
+        // Dichiarazione e inizializzazione separata
+        Character[] arrayCharacter;  // Dichiarazione dell'array
+        arrayCharacter = new Character[]{'P', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'a'};  // Inizializzazione
 
+        // Trasformare una stringa in un array di stringhe utilizzando 'split()'
         String miaStringa = "Se. ti. piace. l'informatica";
-        //miaStringa = "192.168.1.1";
-        String[] arrayString = miaStringa.split("[.]"); // trasformo una stringa in un array di stringhe
+        String[] arrayString = miaStringa.split("\\.");  // Divisione della stringa in base al punto
 
-        // Dichiarazione e inizializzazione di un array di interi
-        int[] numeri = {1, 2, 3, 4, 5};   // 
+        // Dichiarazione e inizializzazione diretta di un array
+        int[] numeri = {1, 2, 3, 4, 5};  // Inizializzazione inline
 
-        int[] numeri2 = new int[]{1, 2, 3, 4, 5};   // Analoga alla precedente
+        // Inizializzazione con 'new'
+        int[] numeri2 = new int[]{1, 2, 3, 4, 5};  // Analoga alla precedente
 
-
-        // Stampa di tutti gli elementi dell'array
-        for (int index = 0; index < numeri.length; index++) { // Utilizzo del costrutto for-each
+        // Stampa di tutti gli elementi dell'array 'numeri' utilizzando un ciclo for tradizionale
+        for (int index = 0; index < numeri.length; index++) {
             System.out.println("Elemento in 'numeri' indice (" + index + "): " + numeri[index]);
         }
 
+        // Stampa degli elementi di 'numeri2' utilizzando un ciclo for-each con contatore manuale
         int indice = 0;
-        for(int elemento : numeri2) {
+        for (int elemento : numeri2) {
             System.out.println("Elemento in 'numeri2' indice (" + indice + "): " + elemento);
             indice++;
         }
 
-        // Utilizzo del costrutto for-each
-
-        for(String elementoStringa : arrayString){
+        // Stampa degli elementi dell'array 'arrayString' utilizzando un ciclo for-each
+        System.out.print("Elementi di arrayString: ");
+        for (String elementoStringa : arrayString) {
             System.out.print(elementoStringa + "_");
         }
+        System.out.println();
 
-        System.out.printf(" ");
-
-        for(char c : arrayCharacter){
+        // Stampa degli elementi dell'array 'arrayCharacter' utilizzando un ciclo for-each
+        System.out.print("Elementi di arrayCharacter: ");
+        for (char c : arrayCharacter) {
             System.out.print(c + "°");
         }
+        System.out.println();
 
+        // Esempio di inserimento e lettura di elementi in un array tramite indice
+        int[] arrayInserimento = new int[3];  // Dichiarazione e allocazione
+        arrayInserimento[0] = 10;  // Inserimento al primo indice
+        arrayInserimento[1] = 20;  // Inserimento al secondo indice
+        arrayInserimento[2] = 30;  // Inserimento al terzo indice
+
+        // Lettura e stampa degli elementi tramite indice
+        System.out.println("Elementi di arrayInserimento:");
+        for (int i = 0; i < arrayInserimento.length; i++) {
+            System.out.println("Indice " + i + ": " + arrayInserimento[i]);
+        }
     }
 }
