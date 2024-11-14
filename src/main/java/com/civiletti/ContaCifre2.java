@@ -9,15 +9,15 @@ public class ContaCifre2 {
     public static int contaCifre2(int numero) {
 
         //counter cifre
-        int counter = 0;
+        int cont = 0;
 
-        if (numero == 0) return 1; // Caso
+        if (numero == 0) return 1; // Caso base
 
-        //ciclo for per calcolare il numero di cifre; != rende funzionale sia per numeri negativi che positivi
+        //ciclo for per calcolare il numero di cifre
         for (; numero != 0; numero/=10) {
-            counter++;
+            cont++;
         }
-        return counter;
+        return cont;
     }
 
     public static void main(String[] cmd) {

@@ -24,6 +24,7 @@ public class ContaCifre {
         Scanner sc = new Scanner(System.in); // Creo un oggetto Scanner per leggere l'input utente
 
         boolean run = true;
+
         while(run) {
             System.out.print("Inserisci un numero: ");
             int n1 = sc.nextInt(); // Leggo il numero intero inserito
@@ -33,6 +34,7 @@ public class ContaCifre {
 
             System.out.print("\nContinuare? (s/n) ");
             char op = sc.next().charAt(0);
+
             if (op == 'n') {
                 run = false;
                 System.out.println("Grazie per aver usato il mio programma!");
