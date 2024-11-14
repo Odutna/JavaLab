@@ -7,6 +7,9 @@ package com.civiletti;
  *
  * In Java, gli array sono considerati oggetti e possono essere dichiarati e inizializzati in vari modi,
  * con o senza l'uso dell'operatore 'new'.
+ *
+ * @author Ing. Civiletti
+ * @version 0.0
  */
 public class ArrayDichiarazione {
 

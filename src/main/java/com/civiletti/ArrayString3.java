@@ -15,7 +15,7 @@ import java.util.Scanner;
  * - Accesso ai dati tramite metodi getter/setter
  *
  * @author Ing. Civiletti
- * @version 3.0
+ * @version 1.3
  */
 public class ArrayString3 {
 

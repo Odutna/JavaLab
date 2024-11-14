@@ -10,6 +10,9 @@ package com.civiletti;
  * e leggera. Infatti, non richiede la creazione di un array temporaneo, quindi 
  * potrebbe risultare più efficiente in termini di memoria per stringhe di grandi
  * dimensioni.
+ *
+ * * @author Ing. Civiletti
+ *  * @version 1.1
  */
 
 import java.util.Scanner;

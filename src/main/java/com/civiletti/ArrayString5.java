@@ -17,7 +17,7 @@ import java.util.Scanner;
  * - Accesso ai dati tramite metodi getter/setter con method chaining
  *
  * @author Ing. Civiletti
- * @version 5.0
+ * @version 1.5
  */
 public class ArrayString5 {
 

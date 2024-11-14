@@ -6,6 +6,9 @@ import java.util.Scanner;
  * Questo programma permette all'utente di inserire un numero variabile di valori in un array
  * e di stamparli. L'utente può specificare la dimensione dell'array e inserire i valori uno per uno.
  * Viene anche fornito un metodo statico per la stampa dell'array in formato leggibile.
+ *
+ * @author Ing. Civiletti
+ * @version 1.0
  */
 public class ArrayInserireValori {
 

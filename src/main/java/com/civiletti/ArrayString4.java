@@ -15,7 +15,7 @@ package com.civiletti;
  * Per un ulteriore esemppio vedere anche la classe Persona.
  *
  * @author Ing. Civiletti
- * @version 4.0
+ * @version 1.4
  *
  */
 

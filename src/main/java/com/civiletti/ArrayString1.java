@@ -6,6 +6,9 @@ package com.civiletti;
  * Utilizza un metodo per l'inserimento della stringa e un altro metodo per contare gli spazi.
  * Sfrutta la funzione 'split()' per convertire la stringa in un array di singoli caratteri e un ciclo 'for-each'
  * per iterare su di essi e contarne gli spazi.
+ *
+ * @author Ing. Civiletti
+ * @version 1.0
  */
 
 import java.util.Scanner;
