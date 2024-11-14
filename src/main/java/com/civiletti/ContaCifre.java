@@ -27,10 +27,10 @@ public class ContaCifre {
 
         while(run) {
             System.out.print("Inserisci un numero: ");
-            int n1 = sc.nextInt(); // Leggo il numero intero inserito
+            int n = sc.nextInt(); // Leggo il numero intero inserito
 
             // Stampo il numero di cifre del numero usando il metodo contaCifre
-            System.out.print("Il numero di cifre è: " + contaCifre(n1));
+            System.out.print("Il numero di cifre è: " + contaCifre(n));
 
             System.out.print("\nContinuare? (s/n) ");
             char op = sc.next().charAt(0);

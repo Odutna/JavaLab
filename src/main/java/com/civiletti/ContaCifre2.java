@@ -26,10 +26,10 @@ public class ContaCifre2 {
 
         do {
             System.out.print("Inserisci un numero: ");
-            int n1 = sc.nextInt(); // Leggo il numero intero inserito
+            int n = sc.nextInt(); // Leggo il numero intero inserito
 
             // Stampo il numero di cifre del numero usando il metodo contaCifre2
-            System.out.print("Il numero di cifre è: " + contaCifre2(n1));
+            System.out.print("Il numero di cifre è: " + contaCifre2(n));
 
             System.out.print("\nContinuare? (s/n) ");
 
