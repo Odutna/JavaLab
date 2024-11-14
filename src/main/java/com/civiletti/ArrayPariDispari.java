@@ -65,7 +65,7 @@ public class ArrayPariDispari {
     @Override
     public String toString() {
 
-        return com.civiletti.InvertiArray.class.getSimpleName() +"{\n" +
+        return InvertiArray2.class.getSimpleName() +"{\n" +
                 "\t array inserito:"  + printArray(d.numeri) + "\n" +
                 "\t elementi pari: " + d.pari +"\n" +
                 "\t elementi dispari : " + d.dispari +"\n" +

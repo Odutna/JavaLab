@@ -26,7 +26,7 @@ public class ArrayDichiarazione {
 
         // Trasformare una stringa in un array di stringhe utilizzando 'split()'
         String miaStringa = "Se. ti. piace. l'informatica";
-        String[] arrayString = miaStringa.split("\\.");  // Divisione della stringa in base al punto
+        String[] arrayString = miaStringa.split("\\.");  // [.] // Divisione della stringa in base al punto [.]
 
         // Dichiarazione e inizializzazione diretta di un array
         int[] numeri = {1, 2, 3, 4, 5};  // Inizializzazione inline
