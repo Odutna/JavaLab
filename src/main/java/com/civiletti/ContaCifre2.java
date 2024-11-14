@@ -11,7 +11,7 @@ public class ContaCifre2 {
         //counter cifre
         int counter = 0;
 
-        if (numero == 0) return 1;
+        if (numero == 0) return 1; // Caso
 
         //ciclo for per calcolare il numero di cifre; != rende funzionale sia per numeri negativi che positivi
         for (; numero != 0; numero/=10) {
@@ -34,5 +34,8 @@ public class ContaCifre2 {
             System.out.print("\nContinuare? (s/n) ");
 
         } while(sc.next().charAt(0) != 'n');
+
+        System.out.println("Grazie per aver usato il mio programma!");
+
     }
 }
