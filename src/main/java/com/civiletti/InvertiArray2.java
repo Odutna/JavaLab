@@ -64,7 +64,7 @@ public class InvertiArray2 {
             numeri[sinistra] = numeri[destra];
             numeri[destra] = temp;
 
-            // Sposta i 'puntatori' verso il centro
+            // Sposta i 'puntatori' verso il centro - metodo della bisezione
             sinistra++;
             destra--;
         }

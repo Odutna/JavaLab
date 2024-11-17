@@ -5,6 +5,20 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Il method chaining (concatenazione di metodi) è una tecnica comune in Java
+ * e in altri linguaggi orientati agli oggetti che consente di chiamare una
+ * serie di metodi sullo stesso oggetto in un'unica istruzione.
+ *
+ * Questa tecnica rende il codice più leggibile e conciso.
+ *
+ * Il method chaining consiste nel progettare i metodi di una classe in modo
+ * che restituiscano un riferimento all'oggetto stesso (this).
+ * Questo permette di concatenare più chiamate a metodi in sequenza.
+ *
+ * Il tipo di ritorno di ciascun metodo che fa parte della catena deve essere
+ * il tipo della classe in cui il metodo è definito!
+ */
 
 public class PersonaChaining {
 
