@@ -1,17 +1,48 @@
 package com.civiletti;
 
 /**
- * Questa classe dimostra i concetti fondamentali del casting in Java:
- * 1. Casting implicito (widening): conversione automatica da un tipo più piccolo a uno più grande
- *    byte -> short -> int -> long -> float -> double
- * 2. Casting esplicito (narrowing): conversione esplicita da un tipo più grande a uno più piccolo
- *    richiede cast esplicito e può comportare perdita di dati
- * 3. Promozione numerica: le operazioni aritmetiche promuovono automaticamente i tipi
- *    più piccoli di int a int
+ * Questa classe illustra i concetti fondamentali del casting in Java, con esempi dettagliati e spiegazioni:
+ *
+ * 1. **Casting implicito (widening)**: avviene automaticamente quando si converte un tipo di dati più piccolo 
+ *    in uno più grande. Questo tipo di conversione è sicuro e non comporta perdita di precisione o dati.
+ *    Esempio:
+ *    
+ *    int numeroInt = 100;
+ *    double numeroDouble = numeroInt; // Conversione implicita da int a double
+ *   
+ *    Ordine di conversione: 'byte -> short -> int -> long -> float -> double'
+ *
+ * 2. **Casting esplicito (narrowing)**: richiede un cast esplicito per convertire un tipo di dati più grande 
+ *    in uno più piccolo. Questa conversione può comportare perdita di dati o precisione.
+ *    Esempio:
+ *    
+ *    double numeroDouble = 123.456;
+ *    int numeroInt = (int) numeroDouble; // Conversione esplicita, la parte decimale viene troncata
+ *    
+ *    Nota: è importante prestare attenzione per evitare comportamenti imprevisti come truncamento dei valori o perdita di segno.
+ *
+ * 3. **Promozione numerica**: in operazioni aritmetiche, i tipi di dati più piccoli di 'int' (come 'byte' e 'short')
+ *    vengono automaticamente promossi a 'int'.
+ *    Esempio:
+ *    
+ *    byte a = 10;
+ *    byte b = 20;
+ *    int risultato = a + b; // 'a' e 'b' sono promossi a 'int' per l'operazione
+ *    
+ *
+ * **Nota sui problemi comuni**:
+ * - *Perdita di precisione*: la conversione da 'float' o 'double' a 'int' tronca la parte decimale.
+ *   Esempio: 'int valore = (int) 7.89; // Risultato: 7'
+ * - *Overflow e underflow*: possono verificarsi durante il cast esplicito quando il valore supera il range del tipo.
+ *   Esempio: 'byte valore = (byte) 130; // Risultato: -126 (overflow)'
+ * - *Compatibilità dei tipi*: il cast tra tipi non numerici (es. 'char' e 'int') può produrre risultati non intuitivi.
+ *   Esempio: 'char c = 'A'; int valoreInt = (int) c; // Risultato: 65 (valore ASCII)'
+ * - *Eccezioni non gestite*: se il cast non è valido o è applicato in modo improprio, potrebbe generare un errore.
  *
  * @author civiletti
  * @version 1.0
  */
+
 public class CastingTipi {
     short a, b;
 
