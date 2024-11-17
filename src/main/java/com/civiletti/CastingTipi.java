@@ -19,7 +19,8 @@ package com.civiletti;
  *    double numeroDouble = 123.456;
  *    int numeroInt = (int) numeroDouble; // Conversione esplicita, la parte decimale viene troncata
  *    
- *    Nota: è importante prestare attenzione per evitare comportamenti imprevisti come truncamento dei valori o perdita di segno.
+ *    Nota: è importante prestare attenzione per evitare comportamenti imprevisti come truncamento dei valori
+ *          o perdita di segno.
  *
  * 3. **Promozione numerica**: in operazioni aritmetiche, i tipi di dati più piccoli di 'int' (come 'byte' e 'short')
  *    vengono automaticamente promossi a 'int'.
@@ -28,7 +29,27 @@ package com.civiletti;
  *    byte a = 10;
  *    byte b = 20;
  *    int risultato = a + b; // 'a' e 'b' sono promossi a 'int' per l'operazione
+ *
+ * **Eccezioni legate al casting**:
+ * - In Java, il cast esplicito non genera eccezioni di runtime per il semplice cast tra tipi primitivi; tuttavia, 
+ *   ci possono essere problemi di compatibilità o perdita di dati non prevista.
+ * - *Operazioni aritmetiche con tipi minori di 'int'*: durante le operazioni con 'byte', 'short' e 'char',
+ *    il risultato viene automaticamente promosso a 'int'.
+ *   Esempio problematico:
+
+ *   byte x = 7;
+ *   byte y = 6;
+ *   byte z = (byte) (x + y); // Necessario il cast esplicito per evitare l'errore di tipo
+
+ *   Senza il cast esplicito, il compilatore genererà un errore: *"possible lossy conversion from int to byte"*.
+ *
+ * - *Eccezioni durante il casting di tipi non compatibili*: se si tenta di castare tipi di riferimento non
+ *    compatibili, si otterrà una 'ClassCastException'.
  *    
+ *   Esempio:
+ *
+ *   Object obj = "Test";
+ *   Integer num = (Integer) obj; // Lancia ClassCastException a runtime
  *
  * **Nota sui problemi comuni**:
  * - *Perdita di precisione*: la conversione da 'float' o 'double' a 'int' tronca la parte decimale.
@@ -125,5 +146,9 @@ class CastTest {
         byte risultatoByte = (byte)(ct1.a + ct1.b);
         System.out.println("\nOperazioni con byte:");
         System.out.println("Somma cast a byte: " + risultatoByte);
+
+        byte x = 7;
+        byte y = 6;
+        byte z = (byte) (x + y);
     }
 }
