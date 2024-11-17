@@ -14,6 +14,7 @@ package com.civiletti;
  *
  * 2. **Casting esplicito (narrowing)**: richiede un cast esplicito per convertire un tipo di dati più grande 
  *    in uno più piccolo. Questa conversione può comportare perdita di dati o precisione.
+ *
  *    Esempio:
  *    
  *    double numeroDouble = 123.456;
@@ -41,11 +42,15 @@ package com.civiletti;
  *   byte y = 6;
  *   byte z = (byte) (x + y); // Necessario il cast esplicito per evitare l'errore di tipo
 
- *   Senza il cast esplicito, il compilatore genererà un errore: *"possible lossy conversion from int to byte"*.
+ *   Senza il cast esplicito, il compilatore genererà un errore:
+ *
+ *             **********************************************
+ *             *"possible lossy conversion from int to byte"*.
+ *             **********************************************
  *
  * - *Eccezioni durante il casting di tipi non compatibili*: se si tenta di castare tipi di riferimento non
  *    compatibili, si otterrà una 'ClassCastException'.
- *    
+ *
  *   Esempio:
  *
  *   Object obj = "Test";
