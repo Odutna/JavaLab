@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @version 1.0
  */
 
-public class ContaCaratteri {
+public class ContaCaratteri2 {
     int conta;
 
     /**
@@ -52,45 +52,38 @@ public class ContaCaratteri {
 
     public static void main(String[] args) {
 
-        ContaCaratteri cc = new ContaCaratteri();
+        ContaCaratteri2 cc = new ContaCaratteri2();
+        Scanner sc = new Scanner(System.in);
 
-        boolean run = true;
         int metodo = 0;
 
-        while(run) {
+        do {
 
             System.out.println("Inserisci una stringa: ");
 
-            Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
-
-            int count = 0;
 
             switch (metodo) {
                 case 0:
-                    count = cc.lengthStringa1(s);
-                    System.out.print("lengthStringa1(): ");
+                    System.out.print("lengthStringa1(): \n...lunghezza stringa " + cc.lengthStringa1(s) + "\n");
                     metodo++;
                     break;
                 case 1:
-                    count = cc.lengthStringa2(s);
-                    System.out.print("lengthStringa2(): ");
+                    System.out.print("lengthStringa2(): \n...lunghezza stringa " + cc.lengthStringa2(s) + "\n");
                     metodo++;
                     break;
                 case 2:
-                    count = cc.lengthStringa3(s);
-                    System.out.print("lengthStringa3(): ");
+                    System.out.print("lengthStringa3() \n...lunghezza stringa " + cc.lengthStringa3(s) + "\n");
                     metodo=0;
                     break;
             }
 
-            System.out.println("Stringa lunga " + count + "\nContinuare? (s/n)");
+            System.out.println("Continuare? (s/n)");
 
-            if (sc.next().charAt(0) == 'n') {
-                sc.close();
-                break;
-            }
-        }
+        } while( sc.nextLine().charAt(0) != 'n');
 
+        System.out.println("Arrivederci!");
+
+        sc.close();
     }
 }
