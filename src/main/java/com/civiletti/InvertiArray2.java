@@ -26,6 +26,7 @@ public class InvertiArray2 {
      */
     InvertiArray2(Scanner sc) {
         this.numeri = inserisciArray(sc);
+        this.dim = numeri.length;
         this.arrayInvertito = invertiArrayOttimizzato(this.numeri.clone());
     }
 
@@ -37,7 +38,7 @@ public class InvertiArray2 {
     public int[] inserisciArray(Scanner sc){
         System.out.print("Quanti numeri vuoi inserire? ");
         this.dim = sc.nextInt();
-        this.numeri = new int[dim];
+        this.numeri = new int[this.dim];
 
         System.out.println("Inserisci " + this.dim + " numeri:");
         for (int i = 0; i < this.dim; i++) {
@@ -72,13 +73,35 @@ public class InvertiArray2 {
     }
 
     /**
+     * Inverte l'ordine degli elementi di un array creando un nuovo array.
+     * Il metodo utilizza un approccio con indice decrescente per copiare gli elementi
+     * nell'ordine inverso.
+     *
+     * Complessità temporale: O(n/2) = O(n), dove n è la lunghezza dell'array
+     * Complessità spaziale: O(n), richiede la creazione di un nuovo array
+     *
+     * @param numeri array da invertire
+     * @return nuovo array contenente gli elementi in ordine inverso
+     */
+    public int[] invertiArrayDoppiaCopia(int[] numeri) {
+        this.arrayInvertito = new int[numeri.length];
+        int leftIndex = numeri.length - 1;
+        for (int i = 0; i <= numeri.length/2; i++) {
+            this.arrayInvertito[i] = this.numeri[leftIndex];
+            this.arrayInvertito[leftIndex] = this.numeri[i];
+            leftIndex--;
+        }
+        return this.arrayInvertito;
+    }
+
+    /**
      * Metodo base per invertire l'array usando un ciclo for
      * Complessità temporale: O(n)
      * Complessità spaziale: O(n) - richiede un nuovo array
      * @param numeri array da invertire
      * @return array invertito
      */
-    public int[] invertiArrayBase(int[] numeri) {
+    public int[] invertiArrayCopia(int[] numeri) {
         this.arrayInvertito = new int[numeri.length];
         for (int i = numeri.length - 1; i >= 0; i--) {
             this.arrayInvertito[numeri.length -1 - i] = this.numeri[i];
@@ -155,17 +178,32 @@ public class InvertiArray2 {
         // Test dei diversi metodi di inversione con misurazione del tempo
         long startTime, endTime;
 
+        //      SBAGLIATO: modifica ia.numeri!
+        //        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri);
+        //        Questo comporterebbe:
+        //
+        //        Modifica dell'array originale ia.numeri
+        //        ia.numeri e ia.arrayInvertito punterebbero allo stesso array
+        //        Perderemmo i valori originali
+
         startTime = System.nanoTime();
-        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri.clone());
+        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri.clone()); // clone() protegge l'array originale da modifiche esterne
         endTime = System.nanoTime();
-        System.out.println("\nInversione con metodo ottimizzato (two pointers):");
+        System.out.println("\nInversione con metodo ottimizzato con un solo array e doppio indice (two pointers):");
         System.out.println(ia);
         System.out.println("Tempo: " + (endTime - startTime) + " ns");
 
         startTime = System.nanoTime();
-        ia.arrayInvertito = ia.invertiArrayBase(ia.numeri);
+        ia.arrayInvertito = ia.invertiArrayCopia(ia.numeri);
         endTime = System.nanoTime();
-        System.out.println("\nInversione con metodo base:");
+        System.out.println("\nInversione con metodo di copiatura da un'array all'altro:");
+        System.out.println(ia);
+        System.out.println("Tempo: " + (endTime - startTime) + " ns");
+
+        startTime = System.nanoTime();
+        ia.arrayInvertito = ia.invertiArrayDoppiaCopia(ia.numeri.clone());
+        endTime = System.nanoTime();
+        System.out.println("\nInversione con doppia copia dell'array e doppio indice:");
         System.out.println(ia);
         System.out.println("Tempo: " + (endTime - startTime) + " ns");
 
