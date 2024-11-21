@@ -26,8 +26,8 @@ public class InvertiArray2 {
      */
     InvertiArray2(Scanner sc) {
         this.numeri = inserisciArray(sc);
-        this.dim = numeri.length;
-        this.arrayInvertito = invertiArrayOttimizzato(this.numeri.clone());
+        //this.dim = numeri.length;
+        //this.arrayInvertito = invertiArrayOttimizzato(this.numeri.clone());
     }
 
     /**
@@ -56,18 +56,18 @@ public class InvertiArray2 {
      * @return array invertito
      */
     public int[] invertiArrayOttimizzato(int[] numeri) {
-        int sinistra = 0;
-        int destra = numeri.length - 1;
+        int i_sinistra = 0;
+        int i_destra = numeri.length - 1;
 
-        while (sinistra < destra) {
+        while (i_sinistra < i_destra) {
             // Scambia gli elementi agli indici sinistra e destra
-            int temp = numeri[sinistra];
-            numeri[sinistra] = numeri[destra];
-            numeri[destra] = temp;
+            int temp = numeri[i_sinistra];
+            numeri[i_sinistra] = numeri[i_destra];
+            numeri[i_destra] = temp;
 
             // Sposta i 'puntatori' verso il centro - metodo della bisezione
-            sinistra++;
-            destra--;
+            i_sinistra++;
+            i_destra--;
         }
         return numeri;
     }
@@ -86,9 +86,9 @@ public class InvertiArray2 {
     public int[] invertiArrayDoppiaCopia(int[] numeri) {
         this.arrayInvertito = new int[numeri.length];
         int leftIndex = numeri.length - 1;
-        for (int i = 0; i <= numeri.length/2; i++) {
-            this.arrayInvertito[i] = this.numeri[leftIndex];
-            this.arrayInvertito[leftIndex] = this.numeri[i];
+        for (int rightIndex = 0; rightIndex <= numeri.length/2; rightIndex++) {
+            this.arrayInvertito[rightIndex] = this.numeri[leftIndex];
+            this.arrayInvertito[leftIndex] = this.numeri[rightIndex];
             leftIndex--;
         }
         return this.arrayInvertito;
@@ -178,23 +178,17 @@ public class InvertiArray2 {
         // Test dei diversi metodi di inversione con misurazione del tempo
         long startTime, endTime;
 
-        //      SBAGLIATO: modifica ia.numeri!
-        //        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri);
-        //        Questo comporterebbe:
-        //
-        //        Modifica dell'array originale ia.numeri
-        //        ia.numeri e ia.arrayInvertito punterebbero allo stesso array
-        //        Perderemmo i valori originali
+        /////////////////////////////////////////////////////////////////////////////
+        //  DA EVITARE:        !!! NON È UN APPROCCIO SICURO !!!                   //
+        //        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri);       //
+        //                                                                         //
+        //        1. Modifica dell'array originale ia.numeri!                      //
+        //        2. ia.numeri e ia.arrayInvertito punterebbero allo stesso array! //
+        //        3. Perderemmo i valori originali!                                //
+        /////////////////////////////////////////////////////////////////////////////
 
         startTime = System.nanoTime();
-        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri.clone()); // clone() protegge l'array originale da modifiche esterne
-        endTime = System.nanoTime();
-        System.out.println("\nInversione con metodo ottimizzato con un solo array e doppio indice (two pointers):");
-        System.out.println(ia);
-        System.out.println("Tempo: " + (endTime - startTime) + " ns");
-
-        startTime = System.nanoTime();
-        ia.arrayInvertito = ia.invertiArrayCopia(ia.numeri);
+        ia.arrayInvertito = ia.invertiArrayCopia(ia.numeri.clone());
         endTime = System.nanoTime();
         System.out.println("\nInversione con metodo di copiatura da un'array all'altro:");
         System.out.println(ia);
@@ -208,6 +202,14 @@ public class InvertiArray2 {
         System.out.println("Tempo: " + (endTime - startTime) + " ns");
 
         startTime = System.nanoTime();
+        ia.arrayInvertito = ia.invertiArrayOttimizzato(ia.numeri.clone()); // clone() protegge l'array originale da modifiche esterne
+        endTime = System.nanoTime();
+        System.out.println("\nInversione con metodo ottimizzato con un solo array e doppio indice (two pointers):");
+        System.out.println(ia);
+        System.out.println("Tempo: " + (endTime - startTime) + " ns");
+
+        // Collection e StringBuilder
+        startTime = System.nanoTime();
         ia.arrayInvertito = ia.invertiArrayCollection(ia.numeri);
         endTime = System.nanoTime();
         System.out.println("\nInversione con Collections:");
@@ -220,6 +222,10 @@ public class InvertiArray2 {
         System.out.println("\nInversione con StringBuilder:");
         System.out.println(ia);
         System.out.println("Tempo: " + (endTime - startTime) + " ns");
+
+        // Crea e esegui il benchmark
+        BenchmarkInvertiArray2 benchmark = new BenchmarkInvertiArray2(ia, 1000);
+        benchmark.eseguiBenchmark();
 
         scanner.close();
     }
