@@ -1,5 +1,8 @@
 package com.civiletti;
 
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+
 /**
  * Questo esempio rappresenta un'introduzione al cifrario di Cesare.
  *
@@ -35,9 +38,16 @@ package com.civiletti;
  * 2. I valori del modulo sono sempre compresi tra '0' e il divisore.
  * 
  */
+
 public class CodificaDecodificaCaratteri {
 
     public static void main(String[] args) {
+
+        Charset charset = Charset.defaultCharset();
+        CharsetDecoder decoder = charset.newDecoder();
+
+        System.out.println("Il formato di codifica utilizzato per la stringa è: " + decoder.charset()); // UTF-8
+        // In Java il tipo char è limitato a 16 bit => 2^16 = 65536
         System.out.println("<Codifica>");
         // Codifica
         char lettera = 'z';  // codice ASCII 122
