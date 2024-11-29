@@ -41,6 +41,7 @@ public class InvertiArray {
         this.numeri = new int[dim];
 
         System.out.println("Inserisci " + this.dim + " numeri:");
+
         for (int i = 0; i < this.dim; i++) {
             System.out.print("Numero (" + (i + 1) + "): ");
             this.numeri[i] = sc.nextInt();
@@ -54,7 +55,9 @@ public class InvertiArray {
      * @return array invertito
      */
     public int[] invertiArrayBase(int[] numeri) {
+
         this.arrayInvertito = new int[numeri.length];
+
         for (int i = numeri.length - 1; i >= 0; i--) {
             this.arrayInvertito[numeri.length -1 - i] = this.numeri[i];
         }
@@ -92,7 +95,7 @@ public class InvertiArray {
 
         // Test
         System.out.println("Inversione con metodo base:");
-        ia.arrayInvertito = ia.invertiArrayBase(ia.numeri);
+        //ia.arrayInvertito = ia.invertiArrayBase(ia.numeri);
         System.out.println(ia);
 
         scanner.close();

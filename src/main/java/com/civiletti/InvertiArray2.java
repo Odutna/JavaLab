@@ -57,7 +57,7 @@ public class InvertiArray2 {
      */
     public int[] invertiArrayOttimizzato(int[] numeri) {
         int i_sinistra = 0;
-        int i_destra = numeri.length - 1;
+        int i_destra = numeri.length - 1; // Ultimo elemento
 
         while (i_sinistra < i_destra) {
             // Scambia gli elementi agli indici sinistra e destra
@@ -86,10 +86,13 @@ public class InvertiArray2 {
     public int[] invertiArrayDoppiaCopia(int[] numeri) {
         this.arrayInvertito = new int[numeri.length];
         int leftIndex = numeri.length - 1;
-        for (int rightIndex = 0; rightIndex <= numeri.length/2; rightIndex++) {
+
+        for (int rightIndex = 0; rightIndex <= numeri.length/2; ) {
             this.arrayInvertito[rightIndex] = this.numeri[leftIndex];
             this.arrayInvertito[leftIndex] = this.numeri[rightIndex];
             leftIndex--;
+            rightIndex++;
+            System.out.println("." + rightIndex + ": " + this.numeri[rightIndex]);
         }
         return this.arrayInvertito;
     }
