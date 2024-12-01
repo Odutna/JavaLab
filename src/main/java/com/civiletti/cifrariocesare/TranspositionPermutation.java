@@ -61,7 +61,7 @@ import java.util.Scanner;
  *
  */
 
-public class CifrarioCesareV4 {
+public class TranspositionPermutation {
 
     private String originale;
     private String cifrata;
@@ -96,7 +96,7 @@ public class CifrarioCesareV4 {
 
     // Cifra il testo con la permutazione
     public static char[] cifratura(char[] input, int[] shift) {
-        CodificaDecodificaCaratteri2 cdc = new CodificaDecodificaCaratteri2();
+        CodDecodChar cdc = new CodDecodChar();
         char[] risultato = new char[input.length];
         // Genera permutazioni
         generaPermutazioni(input.length);
@@ -111,7 +111,7 @@ public class CifrarioCesareV4 {
 
     // Decifra il testo con la permutazione inversa
     public static char[] decifratura(char[] input, int[] shift) {
-        CodificaDecodificaCaratteri2 cdc = new CodificaDecodificaCaratteri2();
+        CodDecodChar cdc = new CodDecodChar();
         char[] risultato = new char[input.length];
         // Genera permutazioni
         //generaPermutazioni(input.length);
@@ -139,7 +139,7 @@ public class CifrarioCesareV4 {
 
     public static void main(String[] args) {
 
-        CifrarioCesareV4 cc = new CifrarioCesareV4();
+        TranspositionPermutation cc = new TranspositionPermutation();
 
         int[] traslazione = {2,3,4,5,6,7,2,4,6,8,9,1,2,1,2,6,12,2,7,4,3,3,1,2,2,1}; // 26 shift diversi da usare ciclicamente
 

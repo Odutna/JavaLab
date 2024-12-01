@@ -61,7 +61,7 @@ import java.util.Scanner;
  *
  */
 
-public class CifrarioCesareV3 {
+public class Transposition {
     String originale;
     String cifrata;
 
@@ -74,7 +74,7 @@ public class CifrarioCesareV3 {
 
 
     public char[] cifratura(char[] cifrata, int[] shift){
-        CodificaDecodificaCaratteri2 cdc = new CodificaDecodificaCaratteri2();
+        CodDecodChar cdc = new CodDecodChar();
         char[] c = new char[cifrata.length];
         for(int i = 0; i < cifrata.length; i++){
             int shiftIndex = i % shift.length; // Cicla lo shift
@@ -84,7 +84,7 @@ public class CifrarioCesareV3 {
     }
 
     public char[] decifratura(char[] cifrata, int[] shift){
-        CodificaDecodificaCaratteri2 cdc = new CodificaDecodificaCaratteri2();
+        CodDecodChar cdc = new CodDecodChar();
         char[] c = new char[cifrata.length];
         for(int i = 0; i < cifrata.length; i++){
             int shiftIndex = i % shift.length; // Cicla lo shift
@@ -102,7 +102,7 @@ public class CifrarioCesareV3 {
 
     public static void main(String[] args) {
 
-        CifrarioCesareV3 cc = new CifrarioCesareV3();
+        Transposition cc = new Transposition();
         int[] traslazione = {2,3,4,5,6,7,2,4,6,8,9,1,2,1,2,6,12,2,7,4,3,3,1,2,2,1}; // 26 shift diversi da usare ciclicamente
 
         char scelta;
