@@ -12,11 +12,8 @@ public class ContaConsonanti {
 
     // Funzione per verificare se un carattere è una consonante
     public static boolean isConsonant(char c) {
-
         c = Character.toLowerCase(c); // Converti il carattere in minuscolo
-
         return (c >= 'a' && c <= 'z' && c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u');
-
     }
 
     public static void main(String[] args) {
@@ -30,9 +27,7 @@ public class ContaConsonanti {
 
         // Conta le consonanti
         for (int i = 0; i < str.length(); i++) {
-
             char currentChar = str.charAt(i);
-
             if (isConsonant(currentChar)) {
                 consonantCount++;
             }
