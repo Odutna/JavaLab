@@ -7,6 +7,8 @@ public class Fattoriale {
     /**
      * Calcolo del fattoriale
      *
+     * https://it.wikipedia.org/wiki/Successione_di_Fibonacci
+     *
      * Il fattoriale di un numero intero positivo 'n', indicato come 'n!', è il prodotto di tutti i numeri interi
      * da 1 fino a 'n'. È definito come:
      * - '0! = 1' (per definizione)

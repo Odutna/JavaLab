@@ -41,28 +41,278 @@ array3 = new int[]{1, 2, 3, 4, 5};
 - Ricerca di valori
 - Ordinamento
 
+Ecco l'espansione del documento originale sugli array in Java:
+
+```markdown
+## Arrays in Java
+
+Gli array in Java sono strutture dati che consentono di memorizzare una sequenza di elementi dello stesso tipo. Sono oggetti e hanno caratteristiche specifiche.
+
+### Caratteristiche Principali
+- Dimensione fissa una volta creati
+- Indici basati su zero (0 - lunghezza-1)
+- Memorizzazione sequenziale in memoria
+- Accesso diretto agli elementi tramite indice
+
+### Dichiarazione e Inizializzazione
+```java
+// Array di interi
+int[] array1 = new int[5];
+
+// Array di stringhe
+String[] nomi = {"Mario", "Luigi", "Giovanni"};
+
+// Array di char
+char[] caratteri = {'a', 'b', 'c', 'd', 'e'};
+
+// Dichiarazione separata
+int[] array3;
+array3 = new int[]{1, 2, 3, 4, 5};
+```
+
+### Metodi di Inserimento
+
+#### Inserimento con For Tradizionale
+```java
+// Inserimento di valori in un array di interi
+int[] numeri = new int[5];
+for (int i = 0; i < numeri.length; i++) {
+    numeri[i] = i * 2;  // 0, 2, 4, 6, 8
+}
+
+// Inserimento di valori in un array di stringhe
+String[] citta = new String[3];
+for (int i = 0; i < citta.length; i++) {
+    citta[i] = "Città " + (i + 1);
+}
+```
+
+#### Inserimento con For-Each
+```java
+// Modifica di un array di interi
+int[] numeri = {1, 2, 3, 4, 5};
+for (int num : numeri) {
+    System.out.println(num * 2);  // Stampa: 2, 4, 6, 8, 10
+}
+
+// Elaborazione array di stringhe
+String[] nomi = {"Mario", "Luigi", "Giovanni"};
+for (String nome : nomi) {
+    System.out.println(nome.toUpperCase());
+}
+```
+
+### Operazioni su Array di Char
+```java
+// Creazione e manipolazione
+char[] alfabeto = new char[26];
+for (int i = 0; i < alfabeto.length; i++) {
+    alfabeto[i] = (char) ('a' + i);
+}
+
+// Conversione stringa in array di char
+String parola = "Java";
+char[] caratteri = parola.toCharArray();
+
+// Inversione array di char
+for (int i = 0; i < caratteri.length / 2; i++) {
+    char temp = caratteri[i];
+    caratteri[i] = caratteri[caratteri.length - 1 - i];
+    caratteri[caratteri.length - 1 - i] = temp;
+}
+```
+
+### Principali Metodi per Array di Stringhe
+
+#### Metodi di Base e Manipolazione
+```java
+String[] nomi = {"Mario", "Luigi", "Giovanni"};
+
+// Lunghezza dell'array
+int lunghezza = nomi.length;
+
+// Metodi di Confronto e Ricerca
+// equals() per confronto di contenuto
+boolean uguali = nomi[0].equals("Mario");  // true
+boolean ignoraCase = nomi[0].equalsIgnoreCase("mario");  // true
+
+// Ricerca di un elemento
+boolean presente = false;
+for (String nome : nomi) {
+    if (nome.equals("Luigi")) {
+        presente = true;
+        break;
+    }
+}
+
+// Ricerca con Stream API (Java 8+)
+boolean presenteStream = Arrays.stream(nomi)
+                               .anyMatch(nome -> nome.equals("Luigi"));
+
+// Split - Divisione di stringhe in array
+String frase = "Java è un linguaggio potente";
+String[] parole = frase.split(" ");  // Divide per spazio
+
+// Split con Espressioni Regolari
+String[] elementi = "mele,banane;arance:uva".split("[,;:]");
+
+// Metodi di Manipolazione
+for (String nome : nomi) {
+    // Conversioni
+    System.out.println(nome.toUpperCase());     // Maiuscolo
+    System.out.println(nome.toLowerCase());     // Minuscolo
+    
+    // Rimozione spazi
+    String nomeTrimmato = nome.trim();
+    
+    // Verifica inizio/fine
+    boolean iniziaCon = nome.startsWith("M");
+    boolean finisceCon = nome.endsWith("i");
+}
+
+// Ricerca e Sostituzione
+String[] nuoviNomi = new String[nomi.length];
+for (int i = 0; i < nomi.length; i++) {
+    // Sostituisce tutti i caratteri
+    nuoviNomi[i] = nomi[i].replace('i', 'o');
+    
+    // Sostituzione con Regex
+    nuoviNomi[i] = nomi[i].replaceAll("[aeiou]", "*");
+}
+
+// Matching con Espressioni Regolari
+boolean matchPattern = "Mario".matches("[A-Za-z]+");  // Solo lettere
+boolean emailValida = "esempio@email.com".matches("^[A-Za-z0-9+_.-]+@(.+)$");
+
+// Ordinamento
+Arrays.sort(nomi);  // Ordina lessicograficamente
+Arrays.sort(nomi, String.CASE_INSENSITIVE_ORDER);  // Ordine case-insensitive
+```
+
+#### Esempi Avanzati di Regex
+```java
+// Validazione input
+String[] input = {"mario123", "Luigi!", "Giovanni_Rossi"};
+Pattern pattern = Pattern.compile("^[A-Za-z]+$");  // Solo lettere
+
+for (String nome : input) {
+    Matcher matcher = pattern.matcher(nome);
+    if (matcher.matches()) {
+        System.out.println(nome + " è valido");
+    } else {
+        System.out.println(nome + " non è valido");
+    }
+}
+```
+
+#### Note sulla Sintassi Stream
+```java
+// Spiegazione dettagliata della sintassi Stream
+Arrays.stream(nomi)           // Converte l'array in uno stream
+      .anyMatch(nome -> nome.equals("Luigi"));  
+      // Lambda expression 
+      // nome -> è un parametro 
+      // nome.equals("Luigi") è il corpo della lambda
+```
+
+### Metodi Principali di String
+- `length()`: Lunghezza stringa
+- `charAt(int index)`: Carattere in posizione
+- `substring(int begin, int end)`: Estrae sottostringa
+- `contains(CharSequence s)`: Verifica contenimento
+- `indexOf(String str)`: Trova posizione sottostringа
+
+
+
+### Considerazioni Aggiuntive
+- La dimensione dell'array è fissa dopo la creazione
+- Gli indici partono sempre da 0
+- Accesso e modifica degli elementi avviene tramite indice
+- Gli array sono oggetti in Java, non primitive
+
+
+
 ## Annotazioni Java
 
 Le annotazioni sono metadati che possono essere aggiunti al codice Java. Forniscono informazioni aggiuntive al compilatore e possono essere utilizzate da strumenti di sviluppo e framework.
 
-### Annotazioni Principali
-- `@Override`: Indica che un metodo sovrascrive un metodo della classe padre
-- `@Deprecated`: Marca un elemento come obsoleto
-- `@SuppressWarnings`: Disattiva specifici warning del compilatore
-- `@FunctionalInterface`: Dichiara un'interfaccia come funzionale (con un solo metodo astratto)
-- `@Test`: Usata per i test unitari (JUnit)
+### Annotazioni Java Principali
 
-### Esempio
+#### Annotazioni di Ereditarietà e Metodi
+- `@Override`:
+    - Indica che un metodo sovrascrive un metodo della classe padre
+    - Verifica a compile-time che il metodo esista nella classe padre
+    - Previene errori di firma del metodo
+
+- `@Inherited`:
+    - Permette a un'annotazione di essere ereditata dalle sottoclassi
+    - Utile per creare annotazioni personalizzate trasmissibili
+
+#### Annotazioni di Gestione Codice
+- `@Deprecated`:
+    - Marca un elemento come obsoleto
+    - Genera warning durante la compilazione
+    - Suggerisce agli sviluppatori alternative moderne
+
+- `@SuppressWarnings`:
+    - Disattiva specifici warning del compilatore
+    - Tipi comuni: `"unchecked"`, `"rawtypes"`, `"deprecated"`
+    - Utilizzare con parsimonia per mantenere la qualità del codice
+
+#### Annotazioni Funzionali
+- `@FunctionalInterface`:
+    - Dichiara un'interfaccia come funzionale
+    - Deve contenere esattamente un metodo astratto
+    - Supporta le espressioni lambda in Java 8+
+
+#### Annotazioni per Test
+- `@Test`:
+    - Usata per identificare metodi di test unitari (JUnit)
+    - Può specificare timeout e comportamenti attesi
+    - Fondamentale per la verifica automatizzata del codice
+
+#### Annotazioni di Documentazione
+- `@author`: Specifica l'autore del codice
+- `@version`: Indica la versione corrente
+- `@param`: Documenta i parametri di un metodo
+- `@return`: Descrive il valore di ritorno
+- `@throws`: Documenta le eccezioni sollevate
+
+### Esempio Completo
 ```java
-public class Esempio {
+/**
+ * Classe dimostrativa delle annotazioni Java
+ * @author Nome Cognome
+ * @version 1.0
+ */
+public class EsempioAnnotazioni {
+    /**
+     * Metodo che effettua una divisione
+     * @param numeratore Primo numero 
+     * @param denominatore Secondo numero
+     * @return Risultato della divisione
+     * @throws ArithmeticException Se denominatore è zero
+     */
     @Override
-    public String toString() {
-        return "Esempio di annotazione";
+    public double dividi(int numeratore, int denominatore) {
+        if (denominatore == 0) {
+            throw new ArithmeticException("Divisione per zero!");
+        }
+        return (double) numeratore / denominatore;
     }
 
+    /**
+     * Metodo deprecato, usare dividi()
+     * @deprecated Non più utilizzabile dalla versione 2.0
+     */
     @Deprecated
-    public void metodoVecchio() {
-        // Metodo deprecato
+    public int vecchiaDivisione(int a, int b) {
+        return a / b;
+    }
+
+    @Test
+    public void testDivisione() {
+        // Logica di test
     }
 }
 ```

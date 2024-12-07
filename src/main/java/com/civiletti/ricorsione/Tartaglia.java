@@ -3,6 +3,9 @@ package com.civiletti.ricorsione;
 /**
  *  Triangolo di Tartaglia
  *
+ *  Il triangolo di Tartaglia è una famosa rappresentazione dei coefficienti binomiali che si
+ *  ottengono dallo sviluppo del binomio di Newton (a+b)^n, dove n è una riga del triangolo...
+ *
  *  Si tratta di una tabella di forma triangolare composta da numeri naturali, dove ogni numero
  *  è un particolare coefficiente binomiale. Tale tabella ha infiniti elementi, e ciascuna riga
  *  si ottiene dalla precedente disponendo 1 agli estremi e sommando le coppie di termini della
@@ -13,7 +16,7 @@ package com.civiletti.ricorsione;
  *  naturale maggiore o uguale ad 1, corrispondono ai coefficienti dello sviluppo della potenza
  *  di binomio.
  *
- *      Cofficiente binomiale:
+ *          Cofficiente binomiale:
  *          =============================================
  *          =   C(n,k)= n!/k!(n−k)!   con k > n, n−k    =
  *          =============================================

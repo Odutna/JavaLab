@@ -5,6 +5,16 @@ import java.util.Scanner;
 /**
  * Calcolo del fattoriale con funzione ricorsiva
  *
+ * https://it.wikipedia.org/wiki/Successione_di_Fibonacci
+ *
+ * • F_{0}=0 e F_{1}=1}+,
+ *
+ *     ogni altro elemento della successione sarà dato dalla relazione:
+ *
+ * • F_{n}=F_{n-1}+F_{n-2}
+ *
+ *    Fib(n) = 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987, ...
+ *
  * La ricorsione è una tecnica di programmazione in cui una funzione richiama sé stessa
  * per risolvere un problema suddividendolo in sottoproblemi più semplici. La funzione
  * ricorsiva deve avere:
@@ -16,8 +26,11 @@ import java.util.Scanner;
  *    - Nel fattoriale, il passo ricorsivo è: 'n! = n * (n-1)!'.
  *
  * **Rischi della ricorsione**:
- * - **Overflow dello stack**: Se non si raggiunge mai il caso base, la ricorsione può andare in loop infinito e causare uno 'StackOverflowError'.
- * - **Efficienza**: Per problemi con un numero elevato di chiamate ricorsive, l'uso della ricorsione può essere meno efficiente rispetto a una soluzione iterativa, poiché consuma memoria per mantenere lo stato di ogni chiamata.
+ * - **Overflow dello stack**: Se non si raggiunge mai il caso base, la ricorsione può andare in
+ *   loop infinito e causare uno 'StackOverflowError'.
+ * - **Efficienza**: Per problemi con un numero elevato di chiamate ricorsive, l'uso della ricorsione
+ *   può essere meno efficiente rispetto a una soluzione iterativa, poiché consuma memoria per mantenere
+ *   lo stato di ogni chiamata.
  *
  * Strategie per definire una funzione ricorsiva:
  * 1. Identificare il caso base per garantire la terminazione.
