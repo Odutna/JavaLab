@@ -1,6 +1,7 @@
 package com.civiletti.ricorsione;
 
 import java.util.Scanner;
+
 /**
  * Programma per il calcolo della serie di Fibonacci utilizzando la ricorsione.
  *
@@ -21,8 +22,8 @@ import java.util.Scanner;
  * di Fibonacci per un dato numero 'n'.
  *
  */
-public class Fibonacci {
 
+public class FibonacciRicorsivo {
 
     /**
      * Metodo per calcolare il valore di Fibonacci di un numero 'n' utilizzando la ricorsione.
@@ -39,46 +40,19 @@ public class Fibonacci {
      * @param n Il numero per cui calcolare il valore di Fibonacci.
      * @return Il valore corrispondente della serie di Fibonacci.
      */
-    public int fibonacciR(int n) {
+    public int fibonacci(int n) {
 
         if (n <= 1) return n; // Casi base
 
-        return fibonacciR(n-1) + fibonacciR(n-2); // Passo ricorsivo
-    }
-
-
-    public static long fibonacci(int n) {
-        // Gestione casi non validi
-        if (n < 0) {
-            throw new IllegalArgumentException("Fibonacci non è definito per numeri negativi");
-        }
-
-        // Casi base
-        if (n == 0) return 0;
-        if (n == 1) return 1;
-
-        // Calcolo iterativo
-        long n_1 = 0;  // Primo numero di Fibonacci: F(0)
-        long n_2 = 1;  // Secondo numero di Fibonacci: F(1)
-        long temp;
-
-        for (int i = 2; i <= n; i++) { // F(2) = F(0) + F(1)    F(3) = F(1) + F(2)     F(4) = F(2) + F(3)
-            temp = n_1 + n_2;  // Nuovo numero di Fibonacci: somma dei due precedenti
-            System.out.println("F(" + i + "): " + temp);
-            n_1 = n_2;         // Il nuovo F(n-1) diventa il vecchio F(n-2)
-            n_2 = temp;        // Il nuovo F(n-2) diventa il precendete F(n)
-        }
-
-        return n_2;
+        return fibonacci(n-1) + fibonacci(n-2); // Passo ricorsivo
     }
 
     public static void main(String[] args) {
-        Fibonacci fibonacci = new Fibonacci();
+        FibonacciRicorsivo fibonacci = new FibonacciRicorsivo();
         do {
             System.out.println("Inserire un numero: ");
             System.out.println(fibonacci.fibonacci(new Scanner(System.in).nextInt()));
             System.out.println("Continuare? (s/n)");
         } while (new Scanner(System.in).nextLine().charAt(0) != 'n');
-        System.out.println("Arrivederci!");
     }
 }

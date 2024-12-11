@@ -47,6 +47,9 @@ public double potenzaVeloce(double base, int esponente) {
 ```
 
 ### 3. Triangolo di Tartaglia (Coefficienti Binomiali)
+
+![](img/tartaglia.png)
+
 ```java
 public int coefficienteBinomiale(int n, int k) {
     // Casi base

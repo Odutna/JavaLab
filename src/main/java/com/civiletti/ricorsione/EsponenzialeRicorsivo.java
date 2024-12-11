@@ -11,7 +11,7 @@ public class EsponenzialeRicorsivo {
      * a un esponente intero non negativo, seguendo queste regole:
      *
      * - **Caso base 1**: Qualsiasi numero elevato a 0 restituisce 1 (base^0 = 1).
-     * - **Caso base 2**: Un numero elevato a 1 restituisce sé stesso (base^1 = base).
+     * - **Caso base 2**: Un numero elevato a 1 restituisce sé stesso (base^1 = base). - RIDONDANTE
      * - **Passo ricorsivo**: Per esponenti maggiori di 1, si utilizza la formula:
      *   'base^esponente = base * base^(esponente-1)'.
      *
@@ -21,13 +21,18 @@ public class EsponenzialeRicorsivo {
      */
     public double esponenziale(int base, int esponente) {
         if(esponente==0) return 1; // Caso base 1
-        else if(esponente==1) return base; // Caso base 2
+        //else if(esponente==1) return base; // Caso base 2  - Ridondante
         else return base * esponenziale(base, esponente-1);
     }
 
     public static void main(String[] args) {
 
         EsponenzialeRicorsivo mf = new EsponenzialeRicorsivo();
+
+        System.out.println("===============================");
+        System.out.println("=   Esponenziale Ricorsivo    =");
+        System.out.println("===============================");
+
         while(true) {
             System.out.println("Inserire i valori di base e esponente: ");
             System.out.println(mf.esponenziale(new Scanner(System.in).nextInt(), new Scanner(System.in).nextInt()));
@@ -35,5 +40,6 @@ public class EsponenzialeRicorsivo {
             System.out.println("Continuare? (s/n)");
             if(new Scanner(System.in).nextLine().equalsIgnoreCase("n")) break;
         }
+        System.out.println("Arrivederci!");
     }
 }

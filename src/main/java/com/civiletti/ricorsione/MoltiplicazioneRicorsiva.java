@@ -28,6 +28,10 @@ public class MoltiplicazioneRicorsiva {
 
         MoltiplicazioneRicorsiva mf = new MoltiplicazioneRicorsiva();
 
+        System.out.println("===============================");
+        System.out.println("=  Moltiplicazione Ricorsiva  =");
+        System.out.println("===============================");
+
         do {
             System.out.println("Inserisci due numeri: ");
             System.out.println(mf.moltiplicazione(new Scanner(System.in).nextInt(), new Scanner(System.in).nextInt()));
