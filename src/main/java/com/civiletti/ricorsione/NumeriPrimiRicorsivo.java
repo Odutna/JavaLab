@@ -4,6 +4,13 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /**
+ * =============================================================================================================
+ * = Definizione: Un numero primo è un numero naturale maggiore di 1 che ha esattamente due divisori distinti: =
+ * =                                                                                                           =
+ * =              1 e il numero stesso.                                                                        =
+ * =                                                                                                           =
+ * =============================================================================================================
+ *
  * Numeri Primi: Storia, Implicazioni e Problemi Aperti
  *
  * I numeri primi sono quei numeri interi maggiori di 1 divisibili solo per 1 e per sé stessi.
@@ -84,7 +91,7 @@ public class NumeriPrimiRicorsivo {
      * @return 'true' se il numero è primo, altrimenti 'false'.
      */
     public boolean isPrimo(int n, int divisore) {
-        // Caso base: numeri <= 1 non sono primi
+        // Caso base: numeri <= 1 non sono primi - 0 e 1 non sono numeri primi
         if (n <= 1) return false;
 
         // Caso base: se siamo arrivati al divisore 1, 'n' è primo
@@ -125,20 +132,51 @@ public class NumeriPrimiRicorsivo {
      * @return 'true' se il numero è primo, altrimenti 'false'.
      */
     public boolean isPrimoOttimizzato(int n, int divisore) {
-        // Caso base: numeri <= 1 non sono primi
-        if (n <= 1) return false;
 
-        // Caso base: se divisore < 2, il numero è primo
-        if (divisore < 2) return true;
+        if (n <= 1) return false;                  // Caso base: numeri <= 1 non sono primi
+        if (divisore > Math.sqrt(n)) return true;  // Caso base: se abbiamo superato la radice quadrata è primo
+        if (n % divisore == 0) return false;       // Se 'n' è divisibile non è primo
 
-        // Se 'n' è divisibile per 'divisore', non è primo
-        if (n % divisore == 0) return false;
-
-        // Passo ricorsivo: verifica con il divisore decrementato
-        return isPrimoOttimizzato(n, divisore - 1);
+        return isPrimoOttimizzato(n, divisore + 1);    // Passo ricorsivo: con divisore successivo
     }
 
+    // Migliore in termini di cicli esecutivi rispetto i precedenti metodi
+    /**
+     * Metodo ricorsivo ottimizzato per verificare se un numero è primo.
+     *
+     * Un numero è **primo** se è maggiore di 1 e divisibile solo per 1 e se stesso.
+     * Questo metodo ottimizza la verifica limitando i controlli ai divisori fino alla radice quadrata di 'n'.
+     *
+     * Strategia:
+     * - Controlla i divisori a partire da 'divisore' (inizialmente 2) fino a √n.
+     * - Se si trova un divisore, il numero non è primo.
+     * - Se nessun divisore valido è trovato entro √n, il numero è primo.
+     *
+     * Casi base:
+     * - Se 'n <= 1', il numero non è primo (ritorna 'false').
+     * - Se 'divisore * divisore > n', significa che non sono stati trovati divisori fino a √n, quindi il
+     *   numero è primo (ritorna 'true'). Significa che hai controllato tutti i divisori fino alla radice
+     *   quadrata di n.
+     * - Se 'n % divisore == 0', il numero è divisibile per 'divisore' e non è primo (ritorna 'false').
+     *
+     * Passo ricorsivo:
+     * - Richiama il metodo con 'divisore + 1', continuando a cercare divisori successivi.
+     *
+     * Complessità:
+     * - La complessità è **O(√n)**, riducendo significativamente i confronti rispetto ad una verifica fino a 'n'.
+     *
+     * @param n        Il numero da verificare.
+     * @param divisore Il divisore corrente (inizialmente 2).
+     * @return 'true' se il numero è primo, altrimenti 'false'.
+     */
+    public boolean isPrimoSqrt(int n, int divisore) {
 
+        if (n <= 1) return false;                     // Caso base: numeri <= 1 non sono primi
+        if (divisore * divisore > n) return true;     // Caso base: se il divisore supera la radice quadrata di n, n è primo
+        if (n % divisore == 0) return false;          // Se 'n' è divisibile per il divisore, non è primo
+
+        return isPrimoSqrt(n, divisore + 1);  // Passo ricorsivo: verifica con il divisore successivo
+    }
 
     public static void main(String[] args) {
 
@@ -153,12 +191,16 @@ public class NumeriPrimiRicorsivo {
             int numero = Integer.parseInt((new Scanner(System.in)).nextLine());
             // Richiamo alternativamente i due metodi
             if(count==0) {
-                System.out.println("Metodo Ricorsivo Base");
+                System.out.println("[0] Metodo Ricorsivo Base");
                 System.out.println(primi.isPrimo(numero, numero - 1));
                 count++;
+            } else if(count==1) {
+                System.out.println("[1] Metodo Ricorsivo Ottimizzato");
+                System.out.println(primi.isPrimoOttimizzato(numero, 2));
+                count++;
             } else {
-                System.out.println("Metodo Ricorsivo Ottimizzato");
-                System.out.println(primi.isPrimoOttimizzato(numero, (int)Math.sqrt(numero - 1)));
+                System.out.println("[2] Metodo Ricorsivo Migliorato con radice quadrata");
+                System.out.println(primi.isPrimoSqrt(numero, 2));
                 count = 0;
             }
             System.out.println("Continuare? (s/n)");

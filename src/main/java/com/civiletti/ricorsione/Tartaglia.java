@@ -43,9 +43,8 @@ public class Tartaglia {
 
     // Funzione per calcolare il fattoriale di un numero
     private static int factoriale(int num) {
-        if (num == 0 || num == 1) {
-            return 1;
-        }
+        if (num == 0 || num == 1) return 1;
+
         int result = 1;
         for (int i = 2; i <= num; i++) {
             result *= i;
@@ -57,13 +56,11 @@ public class Tartaglia {
 
         int rows = 10; // Numero di righe del triangolo
 
-        for (int n = 0; n < rows; n++) { // Per ogni riga
-            for (int k = 0; k <= n; k++) { // Calcola i valori da 0 a n
+        for (int n = 0; n < rows; n++) {    // Per ogni riga
+            for (int k = 0; k <= n; k++) {  // Calcola i valori da 0 a n
                 System.out.print(coefficienteBinomiale(n, k) + " ");
             }
             System.out.println(); // Nuova riga dopo ogni riga completata
         }
     }
-
-
 }

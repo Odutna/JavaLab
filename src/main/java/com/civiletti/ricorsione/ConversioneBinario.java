@@ -59,11 +59,8 @@ public class ConversioneBinario {
      * @return
      */
     public static String binarioString(int numero) {
-        if (numero == 0) {
-            return "b"; // Caso base: stringa vuota
-        }
-        // Ricorsione: calcola la parte superiore e aggiungi il resto come stringa
-        return binarioString(numero / 2) + (numero % 2);
+        if (numero == 0) return "0b"; // Caso base: stringa che indica la base di conversione
+        return binarioString(numero / 2) + (numero % 2); // Ricorsione: calcola la parte superiore e aggiunge il resto come stringa
     }
 
     public static void main(String[] args) {
@@ -76,9 +73,11 @@ public class ConversioneBinario {
         int cont = 0;
         do {
             if( cont ==0 ) {
+                System.out.println("[0]");
                 binarioVoid(inserisci(sc));
                 cont++;
             } else {
+                System.out.println("[1]");
                 System.out.println(binarioString(inserisci(sc)));
                 cont = 0;
             }

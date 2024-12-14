@@ -71,7 +71,7 @@ public class Tartaglia3 {
        for(int n=0; n<righe; n++){
             for(int k=0; k<=n; k++){
                 tartaglia = f.fattorialeRicorsione(n)/(f.fattorialeRicorsione(k)* f.fattorialeRicorsione(n-k));
-                System.out.print(tartaglia + " ");
+                System.out.print(tartaglia + "  ");
             }
            System.out.println();
        }

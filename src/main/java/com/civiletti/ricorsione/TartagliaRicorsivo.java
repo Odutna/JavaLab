@@ -112,9 +112,8 @@ public class TartagliaRicorsivo {
      */
     public static int coefficienteBinomiale(int n, int k) {
         // Condizioni di base
-        if (k == 0 || k == n) {
-            return 1;
-        }
+        if (k == 0 || k == n) return 1;  // C(n,0)=C(n,n)=1
+
         // Relazione ricorsiva
         return coefficienteBinomiale(n - 1, k - 1) + coefficienteBinomiale(n - 1, k);
     }
@@ -125,9 +124,9 @@ public class TartagliaRicorsivo {
         System.out.print("Numero di righe da calcolare: ");
         int righe = sc.nextInt();
 
-        for (int n = 0; n < righe; n++) {
-            for (int k = 0; k <= n; k++) {
-                System.out.print(coefficienteBinomiale(n, k) + " ");
+        for (int n = 0; n < righe; n++) {  // n: righe
+            for (int k = 0; k <= n; k++) { // k: colonne - k=0 o k=n il risultato è 1 => C(n,0)=C(n,n)=1
+                System.out.print(coefficienteBinomiale(n, k) + "   ");
             }
             System.out.println();
         }

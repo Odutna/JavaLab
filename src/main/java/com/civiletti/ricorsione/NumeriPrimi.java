@@ -72,12 +72,13 @@ public class NumeriPrimi {
         if (n <= 1) return false; // Numeri <= 1 non sono primi
         if (n == 2) return true;  // 2 è il primo numero primo
 
-        // Controlla divisibilità per i numeri da 2 a √n
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) return false; // Divisore trovato, non è primo
-        }
-        return true; // Nessun divisore trovato, è primo
+        // Controlla divisibilità per i numeri da 2 a √n - Non è necessario, infatti, testare tutti i divisori fino a n.
+        // Questo è dovuto al fatto che i divisori si presentano in coppie simmetriche rispetto alla radice quadrata
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if (n % i == 0) return false; // Divisore trovato, non è un numero primo
+        return true; // Nessun divisore trovato, è un numero primo
     }
+
 
     public static void main(String[] args) {
         NumeriPrimi primi = new NumeriPrimi();

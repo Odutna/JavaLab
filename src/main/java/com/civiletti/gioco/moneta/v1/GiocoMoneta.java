@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.gioco.moneta.v1;
 
 /**
  * Realizzare un'applicazione in linguaggio Java che emuli il lancio di una moneta.
