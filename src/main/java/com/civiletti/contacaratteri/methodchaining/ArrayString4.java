@@ -1,12 +1,10 @@
-package com.civiletti;
-
-import java.util.Scanner;
+package com.civiletti.contacaratteri.methodchaining;
 
 /**
- * Questa classe implementa un programma per l'analisi di stringhe, in particolare per contare
- * il numero di spazi presenti. A differenza delle versioni precedenti (ArrayString1 e ArrayString2),
- * questa implementazione utilizza l'incapsulamento dei dati attraverso variabili private e metodi
- * getter/setter.
+ * In questa versione, si vuole mostrare come implementare il *method chaining*,
+ * restituendo l'istanza corrente dell'oggetto all'interno dei metodi setter.
+ * Questo permette di concatenare più chiamate di metodo in una singola istruzione,
+ * migliorando la leggibilità e la fluidità del codice.
  *
  * Funzionalità principali:
  * - Inserimento di una stringa da parte dell'utente
@@ -14,16 +12,23 @@ import java.util.Scanner;
  * - Memorizzazione dei dati in variabili private
  * - Accesso ai dati tramite metodi getter/setter
  *
+ * Per un ulteriore esemppio vedere anche la classe Persona.
+ *
  * @author Ing. Civiletti
- * @version 1.3
+ * @version 1.4
+ *
  */
-public class ArrayString3 {
 
-    // Variabili di istanza private per l'incapsulamento dei dati
-    private String stringaInserita;  // Memorizza la stringa inserita dall'utente
-    private int contaSpazi;          // Memorizza il numero di spazi contati
+
+import java.util.Scanner;
+
+public class ArrayString4 {
+
+    private String stringaInserita;
+    private int contaSpazi;
 
     // Metodi getter e setter
+
     /**
      * Restituisce la stringa inserita dall'utente.
      * @return La stringa memorizzata
@@ -36,8 +41,9 @@ public class ArrayString3 {
      * Imposta la stringa da analizzare.
      * @param stringaInserita La stringa da memorizzare
      */
-    public void setStringaInserita(String stringaInserita) {
+    public ArrayString4 setStringaInserita(String stringaInserita) {
         this.stringaInserita = stringaInserita;
+        return this;  // Restituisce l'istanza corrente per consentire chiamate concatenate
     }
 
     /**
@@ -47,13 +53,15 @@ public class ArrayString3 {
     public int getContaSpazi() {
         return contaSpazi;
     }
+    // Fine metodi getter e setter
 
     /**
      * Imposta il numero di spazi contati.
      * @param contaSpazi Il numero di spazi da memorizzare
      */
-    public void setContaSpazi(int contaSpazi) {
+    public ArrayString4 setContaSpazi(int contaSpazi) {
         this.contaSpazi = contaSpazi;
+        return this;  // Restituisce l'istanza corrente per consentire chiamate concatenate
     }
 
     /**
@@ -64,9 +72,10 @@ public class ArrayString3 {
      * @param sc Scanner per la lettura dell'input
      * @return La stringa inserita dall'utente
      */
-    public String inserisciStringa(Scanner sc) {
+    public ArrayString4 inserisciStringa(Scanner sc) {
         System.out.println("Inserisci una stringa:");
-        return sc.nextLine();
+        String s = sc.nextLine();  // Legge l'intera riga di input
+        return setStringaInserita(s);  // Imposta la stringa inserita e restituisce l'istanza
     }
 
     /**
@@ -76,19 +85,18 @@ public class ArrayString3 {
      * Il risultato viene anche memorizzato nella variabile di istanza
      * tramite setContaSpazi().
      *
-     * @param s La stringa da analizzare
+     * @param s La stringa da analizzare  - Rimosso in fase di implementazione
      * @return Il numero di spazi trovati nella stringa
      */
-    public int contaSpazi(String s) {
+    public ArrayString4 contaSpazi() {
         int conta = 0;
-        String[] arrayS = s.split("");  // Divide la stringa in singoli caratteri
+        String[] arrayS = stringaInserita.split("");
         for (String s1 : arrayS) {
-            if (s1.equals(" ")) {  // Usa equals per confrontare le stringhe
+            if (s1.equals(" ")) {  // Usare equals per confrontare le stringhe
                 conta++;
             }
         }
-        setContaSpazi(conta);  // Memorizza il risultato nella variabile di istanza
-        return conta;
+        return setContaSpazi(conta);  // Imposta il numero di spazi e restituisce l'istanza
     }
 
     /**
@@ -115,16 +123,10 @@ public class ArrayString3 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayString3 as = new ArrayString3();
+        ArrayString4 as = new ArrayString4();
 
-        // Acquisizione e memorizzazione della stringa
-        String s = as.inserisciStringa(sc);
-        as.setStringaInserita(s);
-
-        // Visualizzazione della stringa e conteggio degli spazi
-        System.out.println("Stringa inserita: " + as.getStringaInserita());
-        as.contaSpazi(s);
-        System.out.println("Numero di spazi: " + as.getContaSpazi());
+        // Esempio di utilizzo concatenato
+        as.inserisciStringa(sc).contaSpazi();
 
         // Visualizzazione dell'oggetto utilizzando toString()
         System.out.println(as);

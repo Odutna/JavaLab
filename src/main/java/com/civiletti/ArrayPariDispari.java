@@ -83,7 +83,7 @@ public class ArrayPariDispari {
                 d.dispari++;
             }
         }
-        return this.d;
+        return d;
     }
 
     /**

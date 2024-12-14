@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.contacaratteri;
 
 
 /**
@@ -27,6 +27,19 @@ public class ArrayString1 {
 
     /**
      * Metodo per contare il numero di spazi in una stringa.
+     *
+     * • Confronto con ==
+     *
+     *     - Confronta i riferimenti in memoria (l'indirizzo degli oggetti)
+     *     - Per le stringhe, controlla se sono lo stesso oggetto
+     *     - Non confronta il contenuto effettivo
+     *
+     * • Confronto con equals()
+     *
+     *     - Confronta il contenuto effettivo delle stringhe
+     *     - Metodo definito nella classe Object
+     *     - Per la classe String, è stato sovrascritto per confrontare il contenuto testuale
+     *
      * @param s La stringa su cui eseguire il conteggio
      * @return Il numero di spazi nella stringa
      */

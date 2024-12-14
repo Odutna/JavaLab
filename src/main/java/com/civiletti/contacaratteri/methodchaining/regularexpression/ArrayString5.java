@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.contacaratteri.methodchaining.regularexpression;
 
 import java.util.Scanner;
 
@@ -11,8 +11,8 @@ import java.util.Scanner;
  * Funzionalità principali:
  * - Inserimento di una stringa da parte dell'utente o tramite costruttore
  * - Conteggio degli spazi nella stringa
- * - Conteggio delle consonanti nella stringa
- * - Conteggio delle vocali nella stringa
+ * - Conteggio delle consonanti nella stringa – tramite Regular Expression (methodchaining)
+ * - Conteggio delle vocali nella stringa – tramite Regular Expression (methodchaining)
  * - Memorizzazione dei dati in variabili private
  * - Accesso ai dati tramite metodi getter/setter con method chaining
  *
@@ -143,7 +143,7 @@ public class ArrayString5 {
      * Conta il numero di consonanti nella stringa memorizzata.
      * Utilizza una regular expression per identificare i caratteri
      * che non sono vocali.
-     * @return L'istanza corrente per il method chaining
+     * @return L'istanza corrente per il method chaining - Modificato in fase di implementazione nel metodo setter
      */
     public ArrayString5 contaConsonanti() {
         int conta = 0;

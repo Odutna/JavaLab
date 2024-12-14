@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.contacaratteri;
 
 /**
  * Questo programma permette all'utente di inserire una stringa e conta il numero
