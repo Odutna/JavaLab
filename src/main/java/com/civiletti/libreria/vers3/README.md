@@ -1,0 +1,48 @@
+[![](https://mermaid.ink/img/pako:eNq9VwtP2zAQ_itWUFUeaZWBkKZMmsR4TEgUkApoGkHIJJfUIrEr22F0Vf_7nLfzghXYWqly7r777vzdNU6Whss8MGxjNBo5VBIZgo3cEAuBjggOOI7QdxCSMArojDxw4AQ7FMdyxriNTmkwRofkiYQgJXFoSjIYLAkl0kbLoZxBBEMbDR-wgKGJMsMNViQPIQjlWaLhnJMI88UhCxlPsBu-7yfY3H4Fz7LyWZal-b4x7gHXvC5OvCGhUBlPTo52904SuwCXUa8rlwQuSZfjAbuPAWcx9TSX6w9Xq9Vg4NDkm6qVi5VcUxyBmGMXch0L2ZaJEyWfys7QMrepzwhNJSc0QKoNKlmHQ-nOOOgOQiWicQScXeJAbbvy7aAA5FXKtLmlm0VprqXbaoQepLlaobm5VlAz9FwrqEVQczbLz8GrQqpMqQlQwUJc10pILImLfEJxmMowOfhxf349ub-5OLuenOrQVOnbO_TEwjgijXpuEiNsZt0Ik18zpZszQX4nc7-F7MTQ2GMe1kKmPDpWTWrMnkgfvs2sBJrg5xRPNnsh_X4XuIvTMi6Bd3b6hRiiYjpbXGzt9q7RovpAJ4Ou9-mFXk2Oz6cXZ8dNbN5s1a4oXUETUM3MpAuwg3AQkJgGJGdqa7SGTpdFr3qjX1XslJYkhXgVDaFCSSZckkLbU0ioR1zId9KzkfIfl-vR3nBHs8qamt3aaeftApRDPI1bqJ7Z0JVoZ9W2_i8KWmVX5Yw6xifHQNujkVpZ4_G2uihuM-oAZOoohKLphb0jJCu6GVAmGY-_akLbKBa4A9HSRgNqt8Ej8Ms4Mwsyi9rMKo3Z5vNJGNobvmeZQnL2CHZyuuXr0S_iyZm9N38uDB4WM8w5XthoH-1_yXop5CKEfLvvoau4ClX_gm1XsbnJ8VvzvUYsWb3eMlKt96zeDJb1ublhxdSodj2uOl_a94_RcK0Wr6diWanafCvNW6SsSPLG6DqsQ9jozkcNuqIdDP6vrn31v3lSda53q-xQwzTUsRJh4qkXhPSG7RjpE7xj2GqpFhyHnmOou6uCJsfedEFdw5Y8BtNQT83BrLiI5x6WkD8lG7aPQ6Gsc0x_MhYVIPDUucsn2QtJ-l6y-gMNdxhm?type=png)](https://mermaid.live/edit#pako:eNq9VwtP2zAQ_itWUFUeaZWBkKZMmsR4TEgUkApoGkHIJJfUIrEr22F0Vf_7nLfzghXYWqly7r777vzdNU6Whss8MGxjNBo5VBIZgo3cEAuBjggOOI7QdxCSMArojDxw4AQ7FMdyxriNTmkwRofkiYQgJXFoSjIYLAkl0kbLoZxBBEMbDR-wgKGJMsMNViQPIQjlWaLhnJMI88UhCxlPsBu-7yfY3H4Fz7LyWZal-b4x7gHXvC5OvCGhUBlPTo52904SuwCXUa8rlwQuSZfjAbuPAWcx9TSX6w9Xq9Vg4NDkm6qVi5VcUxyBmGMXch0L2ZaJEyWfys7QMrepzwhNJSc0QKoNKlmHQ-nOOOgOQiWicQScXeJAbbvy7aAA5FXKtLmlm0VprqXbaoQepLlaobm5VlAz9FwrqEVQczbLz8GrQqpMqQlQwUJc10pILImLfEJxmMowOfhxf349ub-5OLuenOrQVOnbO_TEwjgijXpuEiNsZt0Ik18zpZszQX4nc7-F7MTQ2GMe1kKmPDpWTWrMnkgfvs2sBJrg5xRPNnsh_X4XuIvTMi6Bd3b6hRiiYjpbXGzt9q7RovpAJ4Ou9-mFXk2Oz6cXZ8dNbN5s1a4oXUETUM3MpAuwg3AQkJgGJGdqa7SGTpdFr3qjX1XslJYkhXgVDaFCSSZckkLbU0ioR1zId9KzkfIfl-vR3nBHs8qamt3aaeftApRDPI1bqJ7Z0JVoZ9W2_i8KWmVX5Yw6xifHQNujkVpZ4_G2uihuM-oAZOoohKLphb0jJCu6GVAmGY-_akLbKBa4A9HSRgNqt8Ej8Ms4Mwsyi9rMKo3Z5vNJGNobvmeZQnL2CHZyuuXr0S_iyZm9N38uDB4WM8w5XthoH-1_yXop5CKEfLvvoau4ClX_gm1XsbnJ8VvzvUYsWb3eMlKt96zeDJb1ublhxdSodj2uOl_a94_RcK0Wr6diWanafCvNW6SsSPLG6DqsQ9jozkcNuqIdDP6vrn31v3lSda53q-xQwzTUsRJh4qkXhPSG7RjpE7xj2GqpFhyHnmOou6uCJsfedEFdw5Y8BtNQT83BrLiI5x6WkD8lG7aPQ6Gsc0x_MhYVIPDUucsn2QtJ-l6y-gMNdxhm)
+
+# Organizzazione del progetto:
+
+1. **Classe Libro**
+    - Rappresenta un singolo libro con proprietà base come titolo, autore e numero di pagine
+    - Fornisce metodi getter e setter per le proprietà
+    - Incapsula le informazioni di base di un libro
+
+2. **Classe Mensola**
+    - Gestisce una collezione di libri con un numero massimo predefinito
+    - Permette di:
+        * Inserire libri in posizioni specifiche
+        * Recuperare libri da posizioni specifiche
+        * Rimuovere libri
+        * Cercare libri per titolo o autore
+    - Rappresenta una singola "mensola" con capacità limitata
+
+3. **Classe Libreria**
+    - Gestisce più mensole
+    - Fornisce funzionalità di alto livello per:
+        * Aggiungere nuove mensole
+        * Cercare libri in tutte le mensole
+        * Inserire libri in mensole specifiche
+    - Astrae la complessità di gestione di più mensole
+
+4. **Classi di Supporto**
+    - `Posizione`: Rappresenta la localizzazione esatta di un libro (quale mensola e quale posizione)
+    - `LibroInPosizione`: Combina un libro con la sua posizione specifica
+
+**Principi di Progettazione**:
+- **Incapsulamento**: Ogni classe nasconde i suoi dettagli interni
+- **Separazione delle Responsabilità**: Ogni classe ha un compito specifico
+- **Flessibilità**: Possibilità di aggiungere e gestire libri in modo dinamico
+- **Scalabilità**: Il sistema può gestire un numero definito di mensole e libri
+
+**Flusso Tipico**:
+1. Creare libri
+2. Creare una libreria
+3. Aggiungere mensole alla libreria
+4. Inserire libri nelle mensole
+5. Cercare libri tramite vari criteri
+
+Questo design permette una gestione modulare e flessibile di una collezione di libri, con la possibilità di espandere e modificare facilmente il sistema in futuro.
+
+---
+
+[![](https://mermaid.ink/img/pako:eNq1Vmtr2zAU_SvCJaQPJ2Qr_eLBoOtjFOq2kLaM1aUo9rVzqS0FSe7Shfz3SfIjju107MMcCPK95z50zrXllRPyCBzPGY1GAVOoUvBImFIpyTnSRNCMfAepkDMg1zgTIJAGjOZqzoVHrlgyJmf4hikohQGzSQaDFTJUHlkN1RwyGHpkOKMShi4pDI9UJ5mlILVnRYYLgRkV72c85cJg9-I4NtjSfg9LtfFNJpOG7xsXEYiGN6TGmyKDjfHy8vzz8aWxSwg5i_pqKRAK-xwzGr4mgucsarjCeLherweDgJmfZasky9wzmoFc0BBKHivaVsZJzLWxc7IqbfoakakSyBKiZdDFehyady6g6UCmCMszEPyOJnrbG98RSUDd20z7B02zrM1b5Q5aoae2Vie0NG811A69aTTUSbDlbLdfgtcVVQVTPjDJU7rNlVRUYUhiZDS1NPinP15uHvyXx9vrB_-qCbVMPz2TN57mGbb6eTRG2C_USM2_a9MtuMTfZu4PiGcMrT2WYR2kzdPE6knN-Rvuwncza4J8urR43N8J2e0PQYTUtnEHolfpD2JQx_RKXG3t6bkl0fZAm0Fv6vSBVv7FzfT2-qKNLcXWcmV2BW3AZmb8PsARoUmCOUuwzNTl6B94uqu02hn9V8auWJ2kIm-TBpnUlMkQLbQ7hcgiDKHcyY6N1E9cyUd3wz1i1T211Trq1u0D1EM8zTuoHbPRZKJbtbH1_9HQurirZzRwPgUOORyN9GoyHh_qm-o1ow9Aro9CqESv7D0hRdPtgLrIePy1QbRHckl7EB1uGsDGa_Ac4jrOLYLcqjd3U8bt5osxTb29OJq4Ugn-Cp453cr16BdGau4dL5aVIaJyToWg7x45ISdfCi3Nv-M6esoyipH-XrD6BY490APH00u9EDSNAkeTraHmKZi-s9DxlMjBdfQhmsyrm3wRUQXloel4MU2lti4o-8l5VoEg0o-h8IvvE_uZsv4Dqbe1dQ?type=png)](https://mermaid.live/edit#pako:eNq1Vmtr2zAU_SvCJaQPJ2Qr_eLBoOtjFOq2kLaM1aUo9rVzqS0FSe7Shfz3SfIjju107MMcCPK95z50zrXllRPyCBzPGY1GAVOoUvBImFIpyTnSRNCMfAepkDMg1zgTIJAGjOZqzoVHrlgyJmf4hikohQGzSQaDFTJUHlkN1RwyGHpkOKMShi4pDI9UJ5mlILVnRYYLgRkV72c85cJg9-I4NtjSfg9LtfFNJpOG7xsXEYiGN6TGmyKDjfHy8vzz8aWxSwg5i_pqKRAK-xwzGr4mgucsarjCeLherweDgJmfZasky9wzmoFc0BBKHivaVsZJzLWxc7IqbfoakakSyBKiZdDFehyady6g6UCmCMszEPyOJnrbG98RSUDd20z7B02zrM1b5Q5aoae2Vie0NG811A69aTTUSbDlbLdfgtcVVQVTPjDJU7rNlVRUYUhiZDS1NPinP15uHvyXx9vrB_-qCbVMPz2TN57mGbb6eTRG2C_USM2_a9MtuMTfZu4PiGcMrT2WYR2kzdPE6knN-Rvuwncza4J8urR43N8J2e0PQYTUtnEHolfpD2JQx_RKXG3t6bkl0fZAm0Fv6vSBVv7FzfT2-qKNLcXWcmV2BW3AZmb8PsARoUmCOUuwzNTl6B94uqu02hn9V8auWJ2kIm-TBpnUlMkQLbQ7hcgiDKHcyY6N1E9cyUd3wz1i1T211Trq1u0D1EM8zTuoHbPRZKJbtbH1_9HQurirZzRwPgUOORyN9GoyHh_qm-o1ow9Aro9CqESv7D0hRdPtgLrIePy1QbRHckl7EB1uGsDGa_Ac4jrOLYLcqjd3U8bt5osxTb29OJq4Ugn-Cp453cr16BdGau4dL5aVIaJyToWg7x45ISdfCi3Nv-M6esoyipH-XrD6BY490APH00u9EDSNAkeTraHmKZi-s9DxlMjBdfQhmsyrm3wRUQXloel4MU2lti4o-8l5VoEg0o-h8IvvE_uZsv4Dqbe1dQ)
