@@ -115,7 +115,7 @@ public class TestPolimorfismo {
 
 ---
 
-### **Conclusione**
+### **Osservazioni**
 - **Immutabilità della classe `String`** garantisce sicurezza e performance in molti contesti, ma richiede strumenti alternativi per modifiche frequenti.
 - **Polimorfismo** consente una maggiore flessibilità e riutilizzabilità del codice, rendendo il sistema più modulare e manutenibile.
 
