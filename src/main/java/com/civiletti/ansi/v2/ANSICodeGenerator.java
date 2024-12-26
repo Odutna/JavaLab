@@ -109,7 +109,7 @@ public class ANSICodeGenerator {
             // Finalize code
             String finalCode = ansiCode.toString().replaceAll(";$", "m");
             System.out.println("\nCodice: \\" + finalCode.replaceAll("\033", "\\033"));
-            System.out.println("Esempio: " + finalCode + "Testo di esempio\033[0m");
+            System.out.println("Esempio: " + finalCode + " Testo d'esempio \033[0m");
 
         } while (askYesNo(scanner, "\nContinuare?", "1"));
     }

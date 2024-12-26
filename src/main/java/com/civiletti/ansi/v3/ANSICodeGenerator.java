@@ -26,13 +26,13 @@ public class ANSICodeGenerator {
     private enum Color {
         BLACK("30", "40", "Nero"),
         RED("31", "41", "Rosso"),
-        GREEN("32", "42", "Verde"),
-        YELLOW("33", "43", "Giallo"),
-        BLUE("34", "44", "Blu"),
-        PURPLE("35", "45", "Viola"),
+        GREEN("92", "102", "Verde"),
+        YELLOW("93", "103", "Giallo"),
+        BLUE("94", "104", "Blu"),
+        PURPLE("95", "105", "Viola"),
         CYAN("36", "46", "Ciano"),
-        GRAY("37", "47", "Grigio"),
-        WHITE("97", "7", "Bianco");
+        GRAY("37", "100", "Grigio"),
+        WHITE("97", "107", "Bianco");
 
         private final String fgCode; // Codice colore per il testo
         private final String bgCode; // Codice colore per lo sfondo
@@ -121,7 +121,7 @@ public class ANSICodeGenerator {
             // Finalize code
             String finalCode = ansiCode.toString().replaceAll(";$", "m");
             System.out.println("\nCodice ANSI generato: \\" + finalCode.replaceAll("\033", "\\033"));
-            System.out.println("Esempio: " + finalCode + "Testo di esempio\033[0m");
+            System.out.println("Esempio: " + finalCode + " Testo d'esempio \033[0m");
 
         } while (askYesNo(scanner, "\nVuoi generare un altro codice?", "1"));
     }
