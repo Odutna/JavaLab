@@ -5,6 +5,14 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.jline.utils.InfoCmp;
 
+/**
+ * Applicazione sviluppata sulla base dell'idea e dell'implementazione (perfettamente funzionante)
+ * realizzate dalla studentessa N. Premovic della classe 4A INF - Dicembre 2024.
+ *
+ * Le modifiche apportate sono esclusivamente frutto di scelte didattiche.
+ *
+ */
+
 public class TestMovimento {
 
     public static void clearScreen(Terminal terminal) {

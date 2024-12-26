@@ -121,7 +121,7 @@ Dove l'oggetto della classe `Libro` a cui veniva fatto riferimento dall'elemento
 -->
 # Costruttore di copia
 Le variabili di tipo non primitivo del linguaggio Java contengono, anziché un valore, un riferimento a un oggetto allocato nell'area di memoria heap.
-Un `costruttore di copia è un metodo costruttore che consente di inizializzare un nuovo oggetto come copia di un oggetto creato in precedenza e fornito come parametro.
+Un `costruttore di copia` è un metodo costruttore che <u>consente di inizializzare un nuovo oggetto come copia di un oggetto creato in precedenza e fornito come parametro</u>.
 In pratica, un costruttore di copia è un filtro che assegna, al momento della creazione del nuovo oggetto, il valore di tutti gli attributi dell'oggetto passato come parametro.
 
 In questo modo, il nuovo oggetto sarà indipendente dall'originale, poiché la copia avviene al livello degli attributi.
@@ -134,14 +134,21 @@ In questo modo, il nuovo oggetto sarà indipendente dall'originale, poiché la c
    }
 ```
 
-
-1. Il fatto che gli oggetti di classe `String` siano **immutabili** li rende, da questo punto di vista, utilizzabili come variabili di un tipo primitivo.
-2. Quando gli attributi di una classe non sono di un tipo primitivo ma sono riferimenti a oggetti istanziati da una classe, il comportamento nella clonazione richiede attenzione. Bisogna considerare che:
-   - Se gli oggetti sono immutabili (come `String`), non ci sono problemi, poiché non possono essere modificati.
-   - Se invece gli oggetti sono mutabili, potrebbe essere necessario implementare una **clonazione profonda** per evitare che le modifiche agli attributi dell'oggetto originale influenzino la copia.
+>## Nota: `String`
+>
+>- 1. Il fatto che gli oggetti di classe `String` siano **<u>immutabili</u>** li rende, da questo punto di vista, **<u>utilizzabili come variabili di un `tipo primitivo`</u>**.
+>- 2. Quando gli attributi di una classe non sono di un tipo primitivo ma sono riferimenti a oggetti istanziati da una classe, il comportamento nella clonazione richiede attenzione. 
+>> Bisogna considerare che:
+  >>  - Se gli oggetti sono immutabili (come `String`), non ci sono problemi, poiché non possono essere modificati.
+  >>  - Se invece gli oggetti sono mutabili, potrebbe essere necessario implementare una **clonazione profonda** per evitare che le modifiche agli attributi dell'oggetto originale influenzino la copia.
+>
+> 
+ 
 ## Utilizzo degli Array di Classi
 
-Nell'applicazione, gli array vengono utilizzati per rappresentare la collezione di libri presenti sulla mensola. Nello specifico:
+Nell'applicazione, gli array vengono utilizzati per rappresentare la collezione di libri presenti sulla mensola. 
+
+Nello specifico:
 
 - Nella classe Mensola, l'array `volumi` di tipo `Libro[]` viene utilizzato per memorizzare i libri presenti sulla mensola. Questo array ha una dimensione fissa pari a 15, che rappresenta il numero massimo di libri che possono essere contenuti sulla mensola.
 - Quando si inserisce un nuovo libro sulla mensola, viene creata una copia dell'oggetto Libro passato come parametro e questa copia viene inserita in una posizione libera dell'array `volumi`.

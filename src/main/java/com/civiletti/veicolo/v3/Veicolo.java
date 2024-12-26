@@ -1,5 +1,6 @@
 package com.civiletti.veicolo.v3;
 
+
 // Classe principale per rappresentare un veicolo
 public class Veicolo {
 

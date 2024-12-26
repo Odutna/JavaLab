@@ -1,5 +1,13 @@
 package com.civiletti.veicolo.v3;
 
+/**
+ * Applicazione sviluppata sulla base dell'idea e dell'implementazione (perfettamente funzionante)
+ * realizzate dalla studentessa N. Premovic della classe 4A INF - Dicembre 2024.
+ *
+ * Le modifiche apportate sono esclusivamente frutto di scelte didattiche.
+ *
+ */
+
 public class InfoVeicolo {
 
     public static void menu(){
