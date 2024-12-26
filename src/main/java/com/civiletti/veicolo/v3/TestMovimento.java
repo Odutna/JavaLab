@@ -17,6 +17,9 @@ public class TestMovimento {
     }
 
     public static void main(String[] args) throws IOException {
+
+
+
         // Configura il terminale
         Terminal terminal = TerminalBuilder.builder()
                 .system(true) // Usa il terminale di sistema
@@ -24,6 +27,7 @@ public class TestMovimento {
 
         // Configura modalità raw
         terminal.enterRawMode();
+
 
         // Crea una mappa 10x10
         Mappa mappa = new Mappa(10, 10);
@@ -40,6 +44,9 @@ public class TestMovimento {
         while (inEsecuzione) {
             InfoVeicolo.menu();
 
+//            int terminal = System.in.read(); // Legge il tasto premuto immediatamente e lo conserva in una variabile "c"
+//            System.out.println("Tasto premuto: "+terminal);
+
             // Mostra opzioni di base
             if (!veicoloAcceso) {
                 System.out.println("\033[93m[R]\033[0m Accendi veicolo");
@@ -51,6 +58,7 @@ public class TestMovimento {
 
 //            clearScreen(terminal);
             TestVeicolo.clearScreen();
+//            char scelta = Character.toUpperCase((char) (terminal));
 
             // Gestione delle scelte
             switch (scelta) {
@@ -107,6 +115,6 @@ public class TestMovimento {
             }
         }
 
-        terminal.close();
+        terminal.close();  //
     }
 }
