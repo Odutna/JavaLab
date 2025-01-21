@@ -55,7 +55,7 @@ import java.util.Scanner;
  *
  */
 
-public class Transpositione {
+public class Transposition {
     String originale;
     String cifrata;
 
@@ -96,8 +96,8 @@ public class Transpositione {
 
     public static void main(String[] args) {
 
-        Transpositione cc = new Transpositione();
-        int[] traslazione = {2,3,4,5,6,7,2,4,6,8,9,1,2,1,2,6,12,2,7,4,3,3,1,2,2,1}; // 26 shift diversi da usare ciclicamente
+        Transposition cc = new Transposition();
+        int[] trasposizione = {2,3,4,5,6,7,2,4,6,8,9,1,2,1,2,6,12,2,7,4,3,3,1,2,2,1}; // 26 shift diversi da usare ciclicamente
 
         char scelta;
 
@@ -114,12 +114,12 @@ public class Transpositione {
             switch (scelta) {
                 case '0':
                     char[] codifica = cc.inserisciStringa(sc);
-                    codifica = cc.cifratura(codifica, traslazione);
+                    codifica = cc.cifratura(codifica, trasposizione);
                     cc.visualizzaStringa(codifica);
                     break;
                 case '1':
                     char[] decodifica = cc.inserisciStringa(sc);
-                    decodifica = cc.decifratura(decodifica, traslazione);
+                    decodifica = cc.decifratura(decodifica, trasposizione);
                     cc.visualizzaStringa(decodifica);
                     break;
                 default:
