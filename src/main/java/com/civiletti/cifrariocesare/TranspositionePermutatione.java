@@ -59,9 +59,18 @@ import java.util.Scanner;
  * - Integrare un algoritmo moderno come AES o RSA.
  * - Aggiungere un meccanismo di verifica dell'integrità (es. MAC o HMAC).
  *
+ * Problema con File Grandi:
+ *
+ * Genera un array in memoria delle STESSE DIMENSIONI del file
+ * Per file molto grandi, potrebbe causare:
+ *
+ *      • Esaurimento della memoria RAM
+ *      • Out of Memory Error
+ *      • Rallentamento significativo del processo
+ *
  */
 
-public class TranspositionPermutation {
+public class TranspositionePermutatione {
 
     private String originale;
     private String cifrata;
@@ -139,7 +148,7 @@ public class TranspositionPermutation {
 
     public static void main(String[] args) {
 
-        TranspositionPermutation cc = new TranspositionPermutation();
+        TranspositionePermutatione cc = new TranspositionePermutatione();
 
         int[] traslazione = {2,3,4,5,6,7,2,4,6,8,9,1,2,1,2,6,12,2,7,4,3,3,1,2,2,1}; // 26 shift diversi da usare ciclicamente
 
@@ -169,7 +178,6 @@ public class TranspositionPermutation {
                 default:
                     System.out.println("Arrivederci!");
                     break;
-
             }
         } while(scelta != 'n');
 
