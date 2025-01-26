@@ -48,12 +48,11 @@ public class ArrayString1 {
 
         String[] arrayS = s.split(""); // Array di stringhe, "" splitta ogni singolo carattere
 
-        for (String s1 : arrayS) {
-            if (s1.equals(" ")) {  // !!! Usare equals per confrontare le stringhe !!!
+        for (String s1 : arrayS)
+            if (s1.equals(" ")) // !!! Usare equals per confrontare le stringhe !!!
                 conta++;
-            }
+
             // System.out.print(" " +s1); // Test
-        }
         //System.out.println(arrayS.length); // Test
         return conta;
     }
