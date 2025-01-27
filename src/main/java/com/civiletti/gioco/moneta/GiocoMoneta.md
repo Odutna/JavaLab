@@ -3,6 +3,7 @@
 All'inizio, il giocatore effettua una scelta: Testa (0) o Croce (1). Durante ogni lancio, il programma mostra il risultato parziale. Al termine di 5 lanci, il vincitore sarà determinato in base al punteggio più alto, sia del giocatore che del PC.
 
 Per la generazione di lanci casuali, si suggerisce di utilizzare la classe Random, del package java.util
+
 ```Java
 import java.util.Random;
     ...
