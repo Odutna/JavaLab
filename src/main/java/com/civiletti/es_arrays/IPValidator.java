@@ -90,7 +90,22 @@ public class IPValidator {
 
             // Uso di Arrays per suddividere l'IP
             String[] ipParts = ip.split("\\.");
+
+            // esempio di utilizzo di stream e collectors
             String ipArrayString = Arrays.stream(ipParts).collect(Collectors.joining(" - "));
+
+            /**
+             * Scrittura equivalente:
+             *
+             * String ipArrayString = "";
+             * for (int i = 0; i < ipParts.length; i++) {
+             *     ipArrayString += ipParts[i];
+             *     if (i < ipParts.length - 1) {
+             *         ipArrayString += " - ";
+             *     }
+             * }
+             *
+             */
 
             System.out.println("IP scomposto: " + ipArrayString);
 
