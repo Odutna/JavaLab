@@ -72,6 +72,14 @@ public class IPValidator {
         // Regex per Subnet valida (255.255.255.0, 255.0.0.0, ecc.)
         String subnetRegex = "^(255|254|252|248|240|224|192|128|0)\\.((255|254|252|248|240|224|192|128|0)\\.){2}(255|254|252|248|240|224|192|128|0)$";
 
+        /**
+         * Pattern è una classe di Java Regex API (java.util.regex.Pattern) che permette di compilare
+         * un'espressione regolare in un oggetto efficiente e riutilizzabile.
+         *
+         *  • la regex viene compilata una volta sola
+         *  • permette di eseguire match con Matcher
+         *  • separiamo il pattern dalla logica di matching
+         */
         Pattern ipv4Pattern = Pattern.compile(ipv4Regex);
         Pattern subnetPattern = Pattern.compile(subnetRegex);
 
@@ -86,12 +94,12 @@ public class IPValidator {
         boolean subnetValida = subnetPattern.matcher(subnet).matches();
 
         if (ipValido && subnetValida) {
-            System.out.println("✅ Indirizzo IP e Subnet validi!");
+            System.out.println("🛜 Indirizzo IP e Subnet validi!");
 
             // Uso di Arrays per suddividere l'IP
             String[] ipParts = ip.split("\\.");
 
-            // esempio di utilizzo di stream e collectors
+            // Esempio di utilizzo di stream e collectors – utilizzato solo a scopo dimostrativo
             String ipArrayString = Arrays.stream(ipParts).collect(Collectors.joining(" - "));
 
             /**
@@ -115,7 +123,7 @@ public class IPValidator {
 
             System.out.println(subnetBuilder.toString());
         } else {
-            System.out.println("❌ Indirizzo IP o Subnet non validi!");
+            System.out.println("⁉️ Indirizzo IP o Subnet non validi!");
         }
 
         scanner.close();

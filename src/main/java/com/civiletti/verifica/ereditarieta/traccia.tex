@@ -1,0 +1,286 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx, multicol}
+\usepackage[a4paper, top=1cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+%\usepackage{titling}
+
+\setlength{\droptitle}{-2cm}  % Riduce lo spazio sopra il titolo
+
+\title{}
+
+\author{}
+\date{}
+
+% Aggiunta di informazioni sopra il titolo
+\posttitle{%
+\begin{center}
+\Large \textbf{Gestione delle Figure Geometriche nel Piano Cartesiano}\\ % Testo sopra il titolo
+\vspace{0.3cm} % Spazio tra la verifica e il titolo
+\end{center}
+}
+
+% Aggiunta di informazioni sotto il titolo
+\pretitle{%
+\begin{center}
+
+        \hspace{-0.5cm} Classe:  \textbf{4A INF} | Nome: \underline{\hspace{2cm}}  Cognome: \underline{\hspace{2cm}} 
+        Data: \underline{\hspace{0.5cm}}/\underline{\hspace{0.5cm}}/\underline{\hspace{1cm}} % Data con spazi vuoti
+        
+    \end{center}
+}
+
+\begin{document}
+
+\maketitle
+\vspace{-2.5cm} % Riduce lo spazio sotto il titolo
+\section*{Introduzione}
+Sviluppa un'applicazione Java per la gestione di figure geometriche nel piano cartesiano. L'applicazione, ricevute in input le coordinate dei punti che definiscono una figura (3 punti per un triangolo, 4 punti per un quadrilatero, ecc.), dovrà calcolare perimetro e area.  A tale scopo, si utilizzi la seguente formula per il calcolo dell'area di un poligono:
+
+\section*{Formula dell'area di un poligono}
+L'area di un poligono con $n$ vertici può essere calcolata utilizzando la formula del determinante o la formula di Gauss:
+
+\begin{equation}
+A = \frac{1}{2} \left| x_1(y_2 - y_n) + x_2(y_3 - y_1) + x_3(y_4 - y_2) + \dots + x_n(y_1 - y_{n-1}) \right|
+\end{equation}
+
+dove:
+\begin{itemize}
+\item $(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)$ sono le coordinate dei vertici del poligono, ordinate in senso orario o antiorario.
+\item Il valore assoluto assicura che l'area sia sempre positiva.
+\end{itemize}
+
+\noindent In Java, questa formula può essere implementata come segue:
+
+\begin{verbatim}
+double area = 0;
+for (int i = 0; i < vertici.length; i++) {
+int j = (i + 1) % vertici.length;
+area += vertici[i].getX() * vertici[j].getY();
+area -= vertici[i].getY() * vertici[j].getX();
+}
+return Math.abs(area) / 2;
+\end{verbatim}
+
+\section*{Esempio di utilizzo delle classi}
+
+\begin{verbatim}
+// Test delle figure
+Punto p1 = new Punto(0, 0);
+Punto p2 = new Punto(3, 0);
+Punto p3 = new Punto(3, 4);
+Punto p4 = new Punto(0, 4);
+
+    Triangolo triangolo = new Triangolo(p1, p2, p3);
+    System.out.println("Area triangolo: " + triangolo.calcolaArea());
+    System.out.println("Perimetro triangolo: " + triangolo.calcolaPerimetro());
+
+    // Test rettangolo
+    Rettangolo rettangolo = new Rettangolo(p1, p2, p3, p4);
+    System.out.println("Area rettangolo: " + rettangolo.calcolaArea());
+    System.out.println("Perimetro rettangolo: " + rettangolo.calcolaPerimetro());
+
+    // Test quadrato
+    Punto q1 = new Punto(0, 0);
+    Punto q2 = new Punto(2, 0);
+    Punto q3 = new Punto(2, 2);
+    Punto q4 = new Punto(0, 2);
+    Quadrato quadrato = new Quadrato(q1, q2, q3, q4);
+    System.out.println("Area quadrato: " + quadrato.calcolaArea());
+    System.out.println("Perimetro quadrato: " + quadrato.calcolaPerimetro());
+\end{verbatim}
+
+
+\section{Classe Punto}
+La classe \texttt{Punto} rappresenta un punto nel piano cartesiano $(x, y)$ con le seguenti caratteristiche:
+\begin{itemize}
+\item Due variabili private di tipo \texttt{double}: $x$ e $y$.
+\item Un costruttore che accetti le coordinate $x$ e $y$.
+\item Un costruttore di copia che crei un nuovo punto a partire da un punto esistente.
+\item Metodi getter e setter per le coordinate.
+\item Un metodo \texttt{distanza(Punto p)} che calcoli la distanza tra due punti.
+\item Un metodo \texttt{equals(Punto p)} per verificare se due punti coincidono.
+\item Un metodo \texttt{toString()} che restituisca una rappresentazione testuale del punto.
+\end{itemize}
+
+
+
+
+
+
+
+
+\section{Classe FiguraGeometrica}
+La classe \texttt{FiguraGeometrica} deve:
+\begin{itemize}
+\item Contenere un array di oggetti \texttt{Punto} per memorizzare i vertici della figura.
+\item Includere un costruttore che accetti un array di punti.
+\item Fornire un metodo per calcolare il perimetro della figura.
+\item Fornire un metodo per calcolare l'area della figura.
+\end{itemize}
+
+\section{Classi Triangolo, Quadrato e Rettangolo}
+\begin{multicols}{2}
+\subsection{Classe \texttt{Triangolo}}
+La classe \texttt{Triangolo} deve soddisfare i seguenti requisiti:
+\begin{itemize}
+\item Utilizzare la classe \texttt{Punto} per rappresentare i tre vertici.
+\item Includere un costruttore che accetti tre oggetti \texttt{Punto}.
+\item Utilizzare il costruttore di copia della classe \texttt{Punto} per memorizzare i vertici.
+\item Implementare un metodo per calcolare l'area del triangolo utilizzando la formula di Erone:
+\end{itemize}
+
+\[
+A = \sqrt{s(s-a)(s-b)(s-c)}
+\]
+
+dove $a$, $b$, $c$ sono i lati del triangolo e $s$ è il semiperimetro:
+
+\[
+s = \frac{a + b + c}{2}
+\]
+
+\begin{itemize}
+\item Implementare un metodo per calcolare il perimetro:
+\end{itemize}
+
+\[
+P = a + b + c
+\]
+
+\subsection{Classe \texttt{Rettangolo}}
+La classe \texttt{Rettangolo} deve:
+\begin{itemize}
+\item Essere una sottoclasse di \texttt{FiguraGeometrica}.
+\item Avere un costruttore che accetti quattro oggetti \texttt{Punto}.
+\item Implementare un metodo per calcolare l'area utilizzando la formula:
+
+\[
+A = \text{base} \times \text{altezza}
+\]
+
+dove la base e l'altezza possono essere determinate calcolando la distanza tra i punti adiacenti.
+\item Implementare un metodo per calcolare il perimetro:
+
+\[
+P = 2 \times (\text{base} + \text{altezza})
+\]
+
+\end{itemize}
+
+\subsection{Classe \texttt{Quadrato}}
+La classe \texttt{Quadrato} deve:
+\begin{itemize}
+\item Essere una sottoclasse della classe \texttt{Rettangolo}.
+\item Includere un costruttore che accetti quattro oggetti \texttt{Punto}.
+\item Implementare un metodo per calcolare l'area usando la formula:
+
+\[
+A = \text{lato}^2
+\]
+
+    \item Implementare un metodo per calcolare il perimetro:
+
+\[
+P = 4 \times \text{lato}
+\]
+\end{itemize}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+\begin{multicols}{2}
+
+
+\section{Esempi di Test}
+
+\subsection{Test Triangolo Rettangolo}
+Punti di input:
+\begin{itemize}
+\item \( P_1(0, 0) \)
+\item \( P_2(3, 0) \)
+\item \( P_3(3, 4) \)
+\end{itemize}
+
+Output atteso:
+\begin{verbatim}
+Area triangolo: 6.0
+Perimetro triangolo: 12.0
+\end{verbatim}
+
+\subsection{Test Rettangolo}
+Punti di input:
+\begin{itemize}
+\item \( P_1(0, 0) \)
+\item \( P_2(3, 0) \)
+\item \( P_3(3, 4) \)
+\item \( P_4(0, 4) \)
+\end{itemize}
+
+Output atteso:
+\begin{verbatim}
+Area rettangolo: 12.0
+Perimetro rettangolo: 14.0
+\end{verbatim}
+
+\vspace{1cm} % Spazio prima dell'elenco
+\subsection{Test Quadrato}
+Punti di input:
+\begin{itemize}
+\item \( Q_1(0, 0) \)
+
+    % \vspace{2cm}
+    \item \( Q_2(2, 0) \)
+    
+    \item \( Q_3(2, 2) \)
+    \item \( Q_4(0, 2) \)
+\end{itemize}
+
+Output atteso:
+\begin{verbatim}
+Area quadrato: 4.0
+Perimetro quadrato: 8.0
+\end{verbatim}
+
+\subsection{Test Pentagono Irregolare}
+Punti di input:
+\begin{itemize}
+\item \( V_1(0, 0) \)
+\item \( V_2(2, 1) \)
+\item \( V_3(3, 3) \)
+\item \( V_4(1, 4) \)
+\item \( V_5(-1, 2) \)
+\end{itemize}
+
+Output atteso:
+\begin{verbatim}
+Area pentagono: 9.0
+\end{verbatim}
+
+\noindent\textbf{Dimostrazione matematica:}
+\[
+A = \frac{1}{2} \left|
+0(1-2) + 2(3-0) + 3(4-1) + 1(2-3) + (-1)(0-4)
+\right|
+\]
+\[
+A = \frac{1}{2} \left|
+0(-1) + 2(3) + 3(3) + 1(-1) + (-1)(-4)
+\right|
+\]
+\[
+\hspace{-2cm} A = \frac{1}{2} \left| 0 + 6 + 9 - 1 + 4 \right| = \frac{18}{2} = 9.0
+\]
+
+\end{multicols}
+
+
+
+\end{document}
