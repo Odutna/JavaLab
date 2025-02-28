@@ -1,4 +1,4 @@
-package com.civiletti.enumerazione.exception;
+package exception;
 
 // Exception personalizzata
 class SaldoInsufficienteException extends Exception {
