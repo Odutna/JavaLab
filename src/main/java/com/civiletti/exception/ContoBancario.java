@@ -1,4 +1,4 @@
-package exception;
+package com.civiletti.exception;
 
 // Exception personalizzata
 class SaldoInsufficienteException extends Exception {
