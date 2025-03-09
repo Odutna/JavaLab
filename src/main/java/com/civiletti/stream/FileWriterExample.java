@@ -10,7 +10,7 @@ public class FileWriterExample {
         // Determina il percorso in base al sistema operativo
         String path;
         if (System.getProperty("os.name").toLowerCase().contains("win")) {
-            path = "C:/Prova/prova.txt"; // Percorso per Windows
+            path = "C:\Prova\prova.txt"; // Percorso per Windows
         } else {
             path = "/tmp/prova.txt"; // Percorso per Unix-based (Linux/macOS)
         }
