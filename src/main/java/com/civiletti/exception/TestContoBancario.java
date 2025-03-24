@@ -1,5 +1,3 @@
-package com.civiletti.exception;
-
 // Exception personalizzata
 class SaldoInsufficienteException extends Exception {
     public SaldoInsufficienteException(String messaggio) {
@@ -8,7 +6,7 @@ class SaldoInsufficienteException extends Exception {
 }
 
 // Classe che rappresenta un conto bancario
-public class ContoBancario {
+class ContoBancario {
     private String titolare;
     private double saldo;
 
@@ -37,9 +35,6 @@ public class ContoBancario {
     public double getSaldo() {
         return saldo;
     }
-}
-
-class TestEccezioniPersonalizzate {
     public static void main(String[] args) {
         ContoBancario conto = new ContoBancario("Mario Rossi", 100.0);
 
@@ -59,6 +54,32 @@ class TestEccezioniPersonalizzate {
         } catch (SaldoInsufficienteException e) {
             System.err.println("Errore: " + e.getMessage());
         }
+
+        System.out.println(conto.getSaldo());
     }
 }
 
+public class TestContoBancario {
+    public static void main(String[] args) {
+        ContoBancario conto = new ContoBancario("Mario Rossi", 100.0);
+
+        try {
+            // Prova a prelevare un importo che supera il saldo
+            conto.preleva(150.0);
+        } catch (SaldoInsufficienteException e) {
+            System.err.println("Errore: " + e.getMessage());
+        }
+
+        // Effettua un deposito
+        conto.deposita(50.0);
+
+        try {
+            // Prova un prelievo che dovrebbe funzionare
+            conto.preleva(50.0);
+        } catch (SaldoInsufficienteException e) {
+            System.err.println("Errore: " + e.getMessage());
+        }
+
+        System.out.println(conto.getSaldo());
+    }
+}
