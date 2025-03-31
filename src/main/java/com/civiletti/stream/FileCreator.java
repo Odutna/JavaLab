@@ -8,8 +8,9 @@ public class FileCreator {
     public static void newFile() {
         // Determina il percorso in base al sistema operativo
         String path;
+        System.out.println(System.getProperty("os.name"));
         if (System.getProperty("os.name").toLowerCase().contains("win")) {
-            path = "C:/html.txt"; // Percorso per Windows
+            path = "C:\\html.txt"; // Percorso per Windows
         } else {
             path = "/tmp/html.txt"; // Percorso per Unix-based (Linux/macOS)
         }
