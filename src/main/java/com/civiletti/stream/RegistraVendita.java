@@ -36,10 +36,11 @@ public class RegistraVendita {
 
                 System.out.println("Il sub-totale per " + nome + " e' " + subTotale);
                 System.out.println("Il totale e' " + totale);
-                outputStream.println(qta + " " + nome + " @ " + costo + " e' " + subTotale);
+                outputStream.println(qta + " " + nome + " @ " + costo + "sub-totale: " + subTotale);
 
                 System.out.println("Vendita terminata? (s/n) ");
-                String risposta = tastiera.next().trim().toLowerCase();
+//                String risposta = tastiera.next().trim().toLowerCase();
+                String risposta = tastiera.next().toLowerCase();
                 if (risposta.equals("s"))
                     fatto = true;
 
