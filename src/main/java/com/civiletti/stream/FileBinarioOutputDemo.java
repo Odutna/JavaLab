@@ -4,8 +4,6 @@ package com.civiletti.stream;
  * Usare ObjectOutputStream per scrivere in un file.
  */
 
-
-
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileNotFoundException;
