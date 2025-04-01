@@ -10,27 +10,28 @@ import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileBinarioInputDemo {
+public class EOFExceptionDemo {
 
     public static void main(String[] args) {
-
         String nomeFile = "numeri.dat";
         try {
             ObjectInputStream inputStream = new ObjectInputStream(new
                     FileInputStream(nomeFile));
-            System.out.println("Lettura dei numeri non negativi nel file " + nomeFile);
-            int unIntero = inputStream.readInt();
-            while (unIntero >= 0) {
-                System.out.println(unIntero);
-                unIntero = inputStream.readInt();
+            System.out.println("Lettura di TUTTI gli interi");
+            System.out.println("nel file " + nomeFile);
+            try {
+                while (true) {
+
+                    //Il ciclo termina quando viene generata un'eccezione.
+                    int unIntero = inputStream.readInt();
+                    System.out.println(unIntero);
+                }
+            } catch (EOFException e) {
+                System.out.println("Fine della lettura dal file.");
             }
-            System.out.println("Fine della lettura dal file.");
             inputStream.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Errore nell'apertura del file " + nomeFile);
-        } catch (EOFException e) {
-            System.out.println("Errore nella lettura del file " + nomeFile);
-            System.out.println("Raggiunta la fine del file. " + e.getMessage());
+            System.out.println("Errore nell’apertura del file " + nomeFile);
         } catch (IOException e) {
             System.out.println("Errore nella lettura del file " + nomeFile);
         }
