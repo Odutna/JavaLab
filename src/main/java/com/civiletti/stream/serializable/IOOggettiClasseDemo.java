@@ -17,12 +17,16 @@ public class IOOggettiClasseDemo {
 
         Specie condorCalifornia = new
                 Specie("Condor della California", 27, 0.02);
-        Specie rinoceronteNero = new
-                Specie("Rinoceronte Nero", 100, 1.0);
+        Specie rinoceronteNero = new Specie("Rinoceronte Nero", 100, 1.0);
+
+        Specie lince = new Specie("Lince Iberica", 150, 1.2);
+        Specie pandaGigante = new Specie("Panda Gigante", 1864, 0.8);
 
         try {
             outputStream.writeObject(condorCalifornia);
             outputStream.writeObject(rinoceronteNero);
+            outputStream.writeObject(lince);
+            outputStream.writeObject(pandaGigante);
             outputStream.close();
         } // catch (IOException e) {
 //            System.err.println("Errore nella scrittura del file " + nomeFile + ".");
@@ -61,12 +65,14 @@ public class IOOggettiClasseDemo {
             System.exit(0);
         }
 
-        Specie lettaUno = null, lettaDue = null;
+        Specie lettaUno = null, lettaDue = null, lettaTre = null, lettaQuattro = null;
 
         try {
             // Si notino le conversioni (casting) di tipo esplicite.
             lettaUno = (Specie)inputStream.readObject();
             lettaDue = (Specie)inputStream.readObject();
+            lettaTre = (Specie)inputStream.readObject();
+            lettaQuattro = (Specie)inputStream.readObject();
             inputStream.close();
 
 //        } catch (Exception e) {
@@ -108,11 +114,15 @@ public class IOOggettiClasseDemo {
         }
     }
 
-        System.out.println("Sono stati letti dal file " + nomeFile +
-                "\ni seguenti dati.");
+        System.out.println("Sono stati letti dal file " + nomeFile + " i seguenti dati.");
         System.out.println(lettaUno);
         System.out.println();
         System.out.println(lettaDue);
+        System.out.println();
+        System.out.println(lettaTre);
+        System.out.println();
+        System.out.println(lettaQuattro);
+        System.out.println();
         System.out.println("Fine del programma.");
     }
 }
