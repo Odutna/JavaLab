@@ -1,0 +1,20 @@
+#RegionCalc{
+    -fx-background-color: orange;
+}
+
+#stackPaneRisultato{
+    -fx-background-color: black;
+}
+
+#btnDiviso, #btnMoltiplica, #btnSomma, #btnSottrai{
+    -fx-font-size: 18px;
+    -fx-background-color: black;
+    -fx-text-fill: #fff;
+  
+}
+#btnUguale{
+    -fx-font-size: 18px;
+    -fx-background-color: red;
+    -fx-text-fill: #fff;
+  
+}

@@ -1,0 +1,25 @@
+#btnGenera{
+    -fx-font-size: 18px;
+    -fx-background-color: green;
+    -fx-text-fill: #fff;
+}
+#lblNumero{
+    -fx-font-size: 28px;
+    -fx-background-color: #000;
+    -fx-text-fill: greenyellow;
+    -fx-padding: 10px;
+    /*-fx-start-margin: 10;
+    -fx-end-margin: 20;
+    -fx-indent: 30px;*/
+}
+#lblTextNumero{
+    -fx-font-size: 14px;
+    /*-fx-background-color: #000;*/
+    -fx-padding: 10px;
+    -fx-text-fill: #fff;
+    
+}
+#regionBottom{
+    -fx-background-color: #0f0f0f;
+    
+}
