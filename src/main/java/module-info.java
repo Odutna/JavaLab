@@ -2,6 +2,8 @@ module com.civiletti.javafxdemo {
     requires javafx.controls;
     requires javafx.fxml; // Utilizzare per l'import di javafx.fxml.FXMLLoader;
 
+    exports com.civiletti;  // Non lo avevo aggiunto
+
     exports com.civiletti.javafxdemo;
     exports com.civiletti.javafdemo02;
     exports com.civiletti.javafxdemo03;
