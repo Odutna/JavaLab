@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.intro;
 
 /**
  * Dimostrazione dell'utilizzo dei metodi costruttore

@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.ordinamento_array;
 
 import java.util.Scanner;
 

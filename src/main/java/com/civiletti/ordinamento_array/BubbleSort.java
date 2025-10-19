@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.ordinamento_array;
 
 import java.util.Scanner;
 
@@ -46,7 +46,7 @@ import java.util.Scanner;
  *
  */
 
-public class InsertionSort {
+public class BubbleSort {
 
     private int[] numeri;
     private int[] numeriOrdinati;
@@ -104,43 +104,37 @@ public class InsertionSort {
             this.numeri[minIndex] = inserisciDato(sc);  // Inserimento dal "basso"
             minIndex++;
         }
-
         setNumeri(numeri);
     }
 
     /**
-     * Ordina un array di interi utilizzando l'algoritmo Insertion Sort.
+     * Ordina un array di interi utilizzando l'algoritmo Bubble Sort.
      *
      * Funzionamento:
-     * - Scorre l'array da sinistra verso destra
-     * - Confronta ogni elemento con quelli precedenti
-     * - Sposta gli elementi più grandi verso destra per fare spazio
+     * - Confronta elementi adiacenti e li scambia se sono in ordine sbagliato
+     * - Ad ogni iterazione esterna, l'elemento più grande "bolla" finisce alla fine
+     *   dell'array
      *
      * Complessità temporale: O(n²)
-     * - Ciclo esterno scorre tutti gli elementi
-     * - Ciclo interno sposta gli elementi precedenti
+     * - Due cicli annidati che confrontano ogni elemento con gli altri
+     * - Peggiore tra gli algoritmi di ordinamento standard
      *
      * Complessità spaziale: O(1)
      * - Ordinamento in-place, non richiede memoria aggiuntiva
      *
-     * Vantaggi:
-     * - Efficiente per piccoli array
-     * - Stabile (mantiene l'ordine di elementi uguali)
-     * - Adatto per array quasi ordinati
-     *
      * @param array Array di interi da ordinare
      * @return Array ordinato in ordine crescente
      */
-    public int[] ordinaInsertionSort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int key = array[i];
-            int j = i - 1;
-            // Sposta gli elementi più piccoli verso sinistra (> key) [verso destra: < key]
-            while (j >= 0 && array[j] > key) {
-                array[j + 1] = array[j];
-                j = j - 1;
+    public int[] ordinaBubbleSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Scambio elementi
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
             }
-            array[j + 1] = key;
         }
         setNumeriOrdinati(array);
         return array;
@@ -163,12 +157,12 @@ public class InsertionSort {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        InsertionSort is = new InsertionSort();
+        BubbleSort bs = new BubbleSort();
 
-        is.popolaArray(sc);
+        bs.popolaArray(sc);
 
-        is.printArray(is.getNumeri());
-        int[] arrayOrdinato = is.ordinaInsertionSort(is.getNumeri());
+        bs.printArray(bs.getNumeri());
+        int[] arrayOrdinato = bs.ordinaBubbleSort(bs.getNumeri());
 
         //////////////////////////////////////////////////////////////////////////////////////////////////
         // !!! Attenzione !!!                                                                           //
@@ -185,11 +179,10 @@ public class InsertionSort {
 
 
         // Stampa i numeri ordinati
-        is.printArray(arrayOrdinato);
+        bs.printArray(arrayOrdinato);
 
         // Test per visualizzare le modifiche: Rimuovere il metodo clone() dai metodi getter e osservare i cambiamenti
-        is.printArray(is.getNumeri());
-        is.printArray(is.getNumeriOrdinati());
+        bs.printArray(bs.getNumeri());
+        bs.printArray(bs.getNumeriOrdinati());
     }
-
 }
