@@ -77,7 +77,7 @@ public class Territorio3 {
         }
         System.out.println("+--------------------------+");
 
-        Object t3 = new Territorio2(0, 0);
+        Object t3 = new Territorio4(0, 0);
 
         if (t3 instanceof Territorio3) {
             System.out.println("L'oggetto t3 è un'istanza della classe Territorio3.");
@@ -96,7 +96,7 @@ public class Territorio3 {
         }
 
         System.out.println("+--------------------------+");
-        Object t4 = new Territorio1(0, 0);
+        Object t4 = new Territorio4(0, 0);
         if (t4 instanceof Territorio3) {
             System.out.println("L'oggetto t4 è un'istanza della classe Territorio3.");
         } else {
