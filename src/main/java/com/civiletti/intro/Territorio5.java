@@ -1,34 +1,23 @@
-package com.civiletti;
+package com.civiletti.intro;
 
 /**
- * Per dimostrare il funzionamento delle variabili e dei metodi static,
- * aggiungiamo una variabile e un metodo static nella classe Territorio4.
+ * Modifichiamo il codice della classe Territorio4 in modo tale che
+ * possiamo avere il totale relativo a ogni oggetto istanziato.
  *
- * Quando una variabile è dichiarata come static, essa è condivisa tra
- * tutte le istanze della classe, quindi qualsiasi modifica a questa
- * variabile avrà effetto su tutte le istanze.
- *
- * Questa implementazione presenta, inoltre, una modifica al metodo
- * toString(), che utilizza i metodi introdotti nella precedente
- * implementazione, per ottenere il nome della classe a cui ci stiamo
- * riferendo:
- *
- *     return "\n" + getClass().getSimpleName() + "{\n" +
- *            ...
  */
 
 import java.util.Scanner;
 
-public class Territorio4 {
+public class Territorio5 {
     // Variabili di istanza
     double superficie; // valore in Kmq
     int abitanti;
 
     // Variabile statica condivisa tra tutte le istanze
-    static double popolazioneTotale = 0;
+    double popolazioneTotale = 0;
 
     // Costruttore
-    public Territorio4(double s, int a) {
+    public Territorio5(double s, int a) {
         superficie = s;
         abitanti = a;
         aggiornaPopolazioneTotale(a);
@@ -40,7 +29,7 @@ public class Territorio4 {
     }
 
     // Metodo statico per incrementare la popolazione totale
-    static void aggiornaPopolazioneTotale(double nuovaPopolazione) {
+    void aggiornaPopolazioneTotale(double nuovaPopolazione) {
         popolazioneTotale += nuovaPopolazione;
     }
 
@@ -57,18 +46,15 @@ public class Territorio4 {
 
     public static void main(String[] args) {
 
+        // Creazione di due istanze
+        Territorio5 t = new Territorio5(257.3, 12250);
+        Territorio5 t2 = new Territorio5(475.98, 98750);
+        // Eliminando static nelle dichiarazioni, della variabile popolazioneTotale e
+        // nel metodo aggiornaPopolazioneTotale(), separiamo il totale per territorio.
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Di quanto è variata la popolazione totale?");
         double variazionePololazione = sc.nextDouble();
-
-        // Creazione di due istanze
-        Territorio4 t = new Territorio4(257.3, 12250);
-        Territorio4 t2 = new Territorio4(475.98, 98750);
-        // Attenzione!!! la popolazione totale sarà data da: (abitanti di t + abitanti di t2)
-        // Se però ci serve il totale per territorio con una variazione relativa dobbiamo
-        // cambiare approccio.
-
-
 
         // Stampa le informazioni delle istanze e della popolazione totale
         System.out.println("+--------------------------+");
@@ -85,8 +71,9 @@ public class Territorio4 {
         System.out.println("Oggetto t2 dopo modifica: " + t2);
         System.out.println("+--------------------------+");
 
-        // Output della popolazione totale senza oggetto specifico
-        System.out.println("Popolazione totale (accesso diretto): " + Territorio4.popolazioneTotale);
+        // Output della popolazione totale
+        double totale = t.popolazioneTotale + t2.popolazioneTotale;
+        System.out.println("Popolazione totale: " + totale);
     }
 }
 

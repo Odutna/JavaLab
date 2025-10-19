@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.ed_civica_cifrario;
 
 /**
  * Questo esempio rappresenta un'introduzione al cifrario di Cesare.

@@ -1,4 +1,4 @@
-package com.civiletti;
+package com.civiletti.ed_civica_cifrario;
 
 import java.util.Random;
 import java.util.Scanner;
