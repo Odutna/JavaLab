@@ -1,4 +1,4 @@
-package com.civiletti.intro;
+package com.civiletti.intro.costruttore;
 
 /**
  * Modifichiamo il codice della classe Territorio4 in modo tale che

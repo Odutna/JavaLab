@@ -1,4 +1,4 @@
-package com.civiletti.intro;
+package com.civiletti.intro.costruttore;
 
 /**
  * Dimostrazione dell'utilizzo dei metodi costruttore variabili di istanza e metodi.
@@ -84,7 +84,7 @@ public class Territorio3 {
         } else {
             System.out.println("t3 è istanza di Territorio3? " + (t3 instanceof Territorio3));
             // Ottenere la classe dell'oggetto
-            System.out.println("Classe completa di t4: " + t3.getClass().getName());         // Nome completo, es. com.civiletti.intro.Territorio2
+            System.out.println("Classe completa di t4: " + t3.getClass().getName());         // Nome completo, es. com.civiletti.intro.costruttore.Territorio2
             System.out.println("Classe semplice di t4: " + t3.getClass().getSimpleName());
 
             // Risali la gerarchia delle classi e stampa le superclassi

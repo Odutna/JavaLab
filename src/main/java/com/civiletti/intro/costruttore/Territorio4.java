@@ -1,4 +1,4 @@
-package com.civiletti.intro;
+package com.civiletti.intro.costruttore;
 
 /**
  * Per dimostrare il funzionamento delle variabili e dei metodi static,
