@@ -40,7 +40,7 @@ class TestC1{
     public static void main(String[] args) {
         C1 c = new C1();
         System.out.println(c.m1());
-        System.out.println(c.m2()); // gli attributi protected hanno visibilità anche in altri package
+        System.out.println(c.m2()); // i membri protected hanno visibilità in altri package solo tramite ereditarietà vedi classe C4
         System.out.println(c.m3());
     }
 }

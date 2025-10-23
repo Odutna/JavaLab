@@ -5,14 +5,14 @@ import com.civiletti.intro.visibilita.C1; // abbiamo dovuto importarlo perché i
 /**
  * Quando chiami m2() dentro C4, Java cerca il metodo nell'ordine:
  *
- * Prima in C4 stesso (non lo trova)
- * Poi nella classe padre C1 (lo trova qui!)
+ * • Prima in C4 stesso (non lo trova)
+ * • Poi nella classe padre C1 (lo trova qui!)
  */
 
 
 public class C4 extends C1 {  // Ereditarietà!
 
-    public void test() {
+    public void testSubClass() {
         // FUNZIONA - accedi tramite "this": this si riferisce sempre all'oggetto effettivo che è stato creato
         System.out.println(this.m2() + " " + this); // L'oggetto è uno solo: C4 (che ha ereditato m2()) - Esplicito
         System.out.println(m2() + " " + this); // Se C4 avesse fatto override di m2(), chiamerebbe la versione di C4 - Implicito
@@ -38,8 +38,8 @@ class TestC4{
 
         System.out.println("Inizio test..");
         System.out.println(c4.m1() + " " + c4);
-        System.out.println("\nChiamo c4.test():");
-        c4.test();
+        System.out.println("\nChiamo c4.testSubClass():");
+        c4.testSubClass();
 
         // Decommenta le seguenti righe per verificare gli errori di compilazione:
         // - protected: accessibile da altro package solo tramite ereditarietà (vedi C4)
