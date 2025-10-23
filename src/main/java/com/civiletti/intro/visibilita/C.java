@@ -17,6 +17,7 @@ package com.civiletti.intro.visibilita;
  * Tuttavia, il metodo m3() con visibilità package-private (default) espone indirettamente m2().
  *
  */
+
 public class C {
 
     public int m1() {
