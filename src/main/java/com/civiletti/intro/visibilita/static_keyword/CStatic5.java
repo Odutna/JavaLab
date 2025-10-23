@@ -27,4 +27,3 @@ class TestCStatic5 {
         CStatic5 b = new CStatic5();
     }
 }
-
