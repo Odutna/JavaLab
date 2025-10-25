@@ -1,4 +1,4 @@
-package com.civiletti.intro.nullo;
+package com.civiletti.intro.valore_nullo;
 
 public class EsempioNull {
     // Variabili di istanza - inizializzate automaticamente a null
