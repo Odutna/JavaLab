@@ -11,11 +11,11 @@ package com.civiletti;
 
 import java.util.Scanner;
 
-public class ConfrontoNumeri {
+public class ConfrontoNumeri_v0 {
     int num1, num2, num3;
 
     // Costruttore
-    public ConfrontoNumeri(int num1, int num2, int num3) {
+    public ConfrontoNumeri_v0(int num1, int num2, int num3) {
         this.num1 = num1;
         this.num2 = num2;
         this.num3 = num3;
@@ -23,13 +23,12 @@ public class ConfrontoNumeri {
 
     // Metodo per trovare il numero massimo
     public int trovaMassimo() {
-        if (num1 >= num2 && num1 >= num3) {
+        if (num1 >= num2 && num1 >= num3)
             return num1;
-        } else if (num2 >= num1 && num2 >= num3) {
+        else if (num2 >= num1 && num2 >= num3)
             return num2;
-        } else {
+        else
             return num3;
-        }
     }
 }
 
@@ -46,7 +45,7 @@ class TestConfrontoNumeri {
             num2 = sc.nextInt();
             num3 = sc.nextInt();
 
-            ConfrontoNumeri numeri = new ConfrontoNumeri(num1, num2, num3);
+            ConfrontoNumeri_v0 numeri = new ConfrontoNumeri_v0(num1, num2, num3);
 
             System.out.println("Il numero più grande è: " + numeri.trovaMassimo());
 
