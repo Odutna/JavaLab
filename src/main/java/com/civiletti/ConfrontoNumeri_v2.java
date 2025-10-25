@@ -1,38 +1,37 @@
 package com.civiletti;
 
 /**
- * Es. 3 - 0
+ * Es. 3 - 2
  *
- * Numero più grande tra tre numeri (con costruttore e metodo)
+ * Numero più grande tra N numeri interi (con costruttori e metodi di istanza)
  *
- * Crea una classe chiamata ConfrontoNumeri che accetta tre numeri nel costruttore.
+ * Crea una classe chiamata ConfrontoNumeri che accetta N numeri nel costruttore.
  * Aggiungi un metodo chiamato trovaMassimo che restituisce il numero più grande.
+ *
  */
 
 import java.util.Scanner;
 
-public class ConfrontoNumeri_v0 {
-    int num1, num2, num3;
+public class ConfrontoNumeri_v2 {
+    private int[] numeri;
 
-    // Costruttore
-    public ConfrontoNumeri_v0(int num1, int num2, int num3) {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.num3 = num3;
+    // Costruttore: riceve un array di interi
+    public ConfrontoNumeri_v2(int[] numeri) {
+        this.numeri = numeri;
     }
 
-    // Metodo per trovare il numero massimo
+    // Metodo per trovare il massimo
     public int trovaMassimo() {
-        if (num1 >= num2 && num1 >= num3)
-            return num1;
-        else if (num2 >= num1 && num2 >= num3)
-            return num2;
-        else
-            return num3;
+        int max = numeri[0];
+        for (int n : numeri) {
+            if (n > max)
+                max = n;
+        }
+        return max;
     }
 }
 
-class TestConfrontoNumeri_v0 {
+class TestConfrontoNumeri_v2 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -59,7 +58,8 @@ class TestConfrontoNumeri_v0 {
                 System.out.println("Arrivederci!");
             }
         }
-
         sc.close();
     }
 }
+
+
