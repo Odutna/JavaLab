@@ -19,3 +19,5 @@ class TestCStatic6 {
         System.out.println(CStatic6.valoreCondiviso); // -999
     }
 }
+
+
