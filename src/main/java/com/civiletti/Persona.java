@@ -7,7 +7,13 @@ package com.civiletti;
  *
  * Crea una classe chiamata Persona con un costruttore che accetta l'età.
  * Aggiungi un metodo chiamato classificaEta che determina la categoria
- * in base all'età (bambino, adolescente, adulto, anziano).
+ * in base all'età:
+ *
+ *  - bambino 0-12 anni
+ *  - adolescente 13-17 anni
+ *  - adulto 18-64 anni
+ *  - anziano >= 65 anni
+ *
  */
 
 import java.util.Scanner;
@@ -22,26 +28,21 @@ public class Persona {
 
     // Metodo per classificare l'età
     public String classificaEta() {
-        if (eta >= 0 && eta <= 12) {
-            return"Sei un bambino.";
-        } else if (eta >= 13 && eta <= 17) {
-            return "Sei un adolescente.";
-        } else if (eta >= 18 && eta <= 64) {
-            return"Sei un adulto.";
-        } else if (eta >= 65) {
-            return "Sei un anziano.";
-        } else {
-            return "Età non valida.";
-        }
+        if (eta >= 0 && eta <= 12) return"Sei un bambino.";
+        else if (eta >= 13 && eta <= 17) return "Sei un adolescente.";
+        else if (eta >= 18 && eta <= 64) return"Sei un adulto.";
+        else if (eta >= 65) return "Sei un anziano.";
+        else return "Età non valida.";
+
     }
 
     //@Override
     public String toString(){
 
         return "\n" + getClass().getSimpleName() + "{ \n" +
-                "\tLa tua età è: " + eta + "\n" +
-                "\tQuindi: " + classificaEta() +
-                "\n}";
+                "\t\t La tua età è: " + eta + "\n" +
+                "\t\t Quindi: " + classificaEta() +
+                "\n\t\t}";
     }
 
 }

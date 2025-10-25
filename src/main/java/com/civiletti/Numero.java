@@ -21,13 +21,11 @@ public class Numero {
 
     // Metodo per verificare il segno
     public void verificaSegno() {
-        if (valore > 0) {
-            System.out.println("Il numero è positivo.");
-        } else if (valore < 0) {
-            System.out.println("Il numero è negativo.");
-        } else {
-            System.out.println("Il numero è zero.");
-        }
+
+        if (valore > 0) System.out.println("Il numero è positivo.");
+        else if (valore < 0) System.out.println("Il numero è negativo.");
+        else System.out.println("Il numero è zero.");
+
     }
 }
 
