@@ -3,7 +3,7 @@ package com.civiletti;
 /**
  * Es. 1
  *
- * Verifica del numero positivo, negativo o zero (con costruttore e metodo)
+ * Verifica se il numero inserito è pari, o dispari (con costruttore e metodo)
  * Crea una classe chiamata Numero con un costruttore che accetta un intero.
  * Aggiungi un metodo chiamato verificaSegno che determina se il numero è positivo,
  * negativo o uguale a zero.
