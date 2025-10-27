@@ -11,11 +11,11 @@ package com.civiletti;
 
 import java.util.Scanner;
 
-public class Numero {
+public class SegnoNumero {
     int valore;
 
     // Costruttore
-    public Numero(int valore) {
+    public SegnoNumero(int valore) {
         this.valore = valore;
     }
 
@@ -29,14 +29,14 @@ public class Numero {
     }
 }
 
-class TestNumero {
+class TestSegnoNumero {
     public static void main(String[] args) {
 
         System.out.println("Inserisci un numero: ");
         Scanner sc = new Scanner(System.in);
         int numero =  sc.nextInt();
 
-        Numero num = new Numero(numero);
-        num.verificaSegno();
+        NumeroPari num = new NumeroPari(numero);
+        num.verificaPari();
     }
 }
