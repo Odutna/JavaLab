@@ -49,7 +49,7 @@ class TestConfrontoNumeri_v0 {
             }
 
             // Uso del costruttore
-            ConfrontoNumeri_v2 confronto = new ConfrontoNumeri_v2(valori);
+            ConfrontoNumeri_v3 confronto = new ConfrontoNumeri_v3(valori);
             System.out.println("Il numero massimo è: " + confronto.trovaMassimo());
 
             System.out.println("Vuoi continuare? (s/n)");
