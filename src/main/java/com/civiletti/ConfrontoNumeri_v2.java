@@ -2,10 +2,10 @@ package com.civiletti;
 
 /**
  * Esercizio 3.2 - Confronto di numeri
- * <p>
- * La classe ConfrontoNumeri_v2 consente di individuare il valore massimo
+ *
+ * La classe ConfrontoNumeri consente di individuare il valore massimo
  * tra una serie di numeri inseriti dall’utente.
- * <p>
+ *
  * Funzionalità:
  * - Chiede all’utente quanti numeri inserire.
  * - Memorizza i valori.
